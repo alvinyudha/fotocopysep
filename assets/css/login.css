@@ -1,0 +1,116 @@
+*{
+   margin: 0;
+   padding: 0;
+   border: 0; 
+}
+body{
+    height:100vh ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat',sans-serif;
+    background: linear-gradient(120deg, #2980b9,#8e44ad);
+}
+.main{
+    position: relative;
+    height: 500px;
+    width: 800px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+}
+.main .left-side{
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+} 
+.main .left-side img{
+    width: 100%;
+    height: 100%;
+    filter: brightness(.9);
+}
+.main .right-side{
+    position: absolute;
+    right:0;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    background:#ffffff;
+   
+}
+.main .right-side h1{
+    margin: 55px 0 40px;
+}
+form .form-group input{
+    margin: 0 21px 10px 0;
+    width: 250px;
+    height: 40px;
+    border-radius: 3px;
+    background: #e9e9e9;
+    border: #e9e9e9;
+    padding-left: 45px;
+    font-size: 14px;
+    letter-spacing: .5px;
+}
+form .form-group i{
+    transform: translateX(35px);
+}
+.text-center1{
+    font-size: 13px;
+    text-align: end;
+    margin-top: -16px;
+    padding-right: 52px;
+    height: 0px;
+    letter-spacing: .2px;
+    justify-content: space-between;
+}
+.text-center2{
+    font-size: 13px;
+    text-align: start;
+    margin-top: 9px;
+    padding-left: 52px;
+    letter-spacing: .2px;
+    justify-content: space-between;
+}
+form button{
+    cursor: pointer;
+    background: #1a99ee;
+    color: #f1f1f1;
+    width: 300px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    border-radius: 3px;
+    transition: .4s;
+}
+form button:hover{
+    background:#198edb ;
+}
+div[name=back]{
+    text-align: start;
+    padding: 100px -20px 0 0;
+    
+    
+    
+}
+@media (max-width: 810px){
+    .main{
+        width: 400px;
+    }
+    .main .right-side{
+        width: 100%;
+        background: #ffffffdc;
+    }
+    .main .left-side{
+        width: 100%;
+        filter: brightness(1);
+    }
+    form .form-group input{
+        background: #d4d4d4;
+        border: 1px solid #d4d4d4;
+    }
+}
+.flashdata{
+color: red;
+}
