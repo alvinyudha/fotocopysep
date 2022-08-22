@@ -1,7 +1,7 @@
 <body class="hold-transition layout-top-nav">
     <!-- Default box -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- Content Header (Page ) -->
         <div class="content-header">
             <div class="container">
                 <div class="row mb-2">
