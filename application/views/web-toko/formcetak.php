@@ -30,13 +30,13 @@
                         <!-- /.card-header -->
                         <!-- form start -->
 
-                        <form action="<?= base_url('website/tambahformcetak') ?>" method="post">
+                        <form action="<?= base_url('website/tambahformcetak') ?>" method="post" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="file">File input</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" name="nama" class="custom-file-input" id="file">
+                                            <input type="file" name="nama" class="custom-file-input" id="nama">
                                             <label class="custom-file-label" for="file">Choose file</label>
                                         </div>
                                         <div class="input-group-append">
@@ -45,10 +45,20 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="ukuran">Ukuran</label>
+                                    <input type="text" class="form-control" name="ukuran" value="<?= $foto['paket'][0] . $foto['paket'][1] . $foto['paket'][2];?>" readonly>
+                                </div>
 
-                                <div class="form-group d-none">
-
-                                    <input type="text" name="ukuran" value="<?= $foto['paket'] ?>">
+                                <div class="form-group">
+                                    <label for="jumlah">Jumlah</label>
+                                    <input type="number" class="form-control" name="jumlah" min="<?= ($foto['paket'][6] == " ") ? $foto['paket'][5] : $foto['paket'][6];?>" value="<?= ($foto['paket'][6] == " ") ? $foto['paket'][5] : $foto['paket'][6];?>">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="d-none form-control" name="harga" value="<?= ($foto['paket'][6] == " ") ? number_format($foto['harga']/$foto['paket'][5]) : number_format($foto['harga']/$foto['paket'][6]);?>">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="d-none form-control" name="id_user" value="<?= $this->session->userdata('id_user');?>">
                                 </div>
                             </div>
                             <!-- /.card-body -->

@@ -29,32 +29,51 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <?php echo form_open_multipart('') ?>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="file">File input</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="file">
-                                        <label class="custom-file-label" for="file">Choose file</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">Upload</span>
+                        <form action="<?= base_url('website/tambahfilecetak') ?>" method="post" enctype="multipart/form-data">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="file">File input</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" name="nama" class="custom-file-input" id="nama">
+                                            <label class="custom-file-label" for="file">Choose file .pdf</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="deskripsi">Deskripsi</label>
-                                <textarea type="text" class="form-control" id="deskripsi" placeholder="deskripsi"></textarea>
+                                <div class="form-group">
+                                    <label for="ukuran">Ukuran</label>
+                                    <select class="form-select" aria-label="Default select example" name="ukuran">
+                                        <option selected>Pilih Ukuran</option>
+                                        <option value="A4">A4</option>
+                                        <option value="A5">A5</option>
+                                    </select>  
+                                </div>
+                                <div class="form-group">
+                                    <label for="jumlah">Jumlah</label>
+                                    <input type="number" class="form-control" name="jumlah" min="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="jumlah">Harga</label>
+                                    <select class="form-select" aria-label="Default select example" name="harga">
+                                        <option selected>Pilih Harga</option>
+                                        <option value="100">Rp.100/lbr Hitam Putih</option>
+                                        <option value="500">Rp.500/lbr Warna</option>
+                                    </select>                                
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="d-none form-control" name="id_user" value="<?= $this->session->userdata('id_user');?>">
+                                </div>
                             </div>
-                        </div>
-                        <!-- /.card-body -->
+                            <!-- /.card-body -->
 
-                        <div class="card-footer p-3 border-top-0 bg-transparent">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                        <?php echo form_close(); ?>
+                            <div class="card-footer p-3 border-top-0 bg-transparent">
+                                <button type="submit" class="btn btn-primary  swalDefaultSuccess">Submit</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
