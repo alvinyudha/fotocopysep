@@ -165,9 +165,6 @@
                     <button type="submit" class="btn btn-success float-right"><i class="fas fa-credit-card"></i>
                         Transfer
                     </button>
-                    <button type="submit" class="btn btn-success float-right"><i class="fas fa-credit-card"></i>
-                        Transfer
-                    </button>
                 </div>
             </div>
             <?php echo form_close() ?>
