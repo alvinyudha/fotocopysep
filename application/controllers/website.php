@@ -83,8 +83,7 @@ class website extends CI_Controller
         if ($nama = '') {
         } else {
             $config['upload_path']          = './assets/barang/';
-            $config['allowed_types']        = 'gif|jpg|png';
-            $config['max_size']             = 10000;
+            $config['allowed_types']        = 'jpg|png|gif';
 
             $this->load->library('upload', $config);
             $this->upload->initialize($config);

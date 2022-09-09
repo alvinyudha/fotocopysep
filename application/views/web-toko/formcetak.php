@@ -52,10 +52,10 @@
 
                                 <div class="form-group">
                                     <label for="jumlah">Jumlah</label>
-                                    <input type="number" class="form-control" name="jumlah" min="<?= ($foto['paket'][6] == " ") ? $foto['paket'][5] : $foto['paket'][6];?>" value="<?= ($foto['paket'][6] == " ") ? $foto['paket'][5] : $foto['paket'][6];?>">
+                                    <input type="number" class="form-control" name="jumlah" min="<?=$foto['lembar'];?>" value="<?= $foto['lembar'];?>">
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="d-none form-control" name="harga" value="<?= ($foto['paket'][6] == " ") ? number_format($foto['harga']/$foto['paket'][5]) : number_format($foto['harga']/$foto['paket'][6]);?>">
+                                    <input type="number" class="d-none form-control" name="harga" value="<?= ($foto['harga']/$foto['lembar']);?>">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="d-none form-control" name="id_user" value="<?= $this->session->userdata('id_user');?>">
