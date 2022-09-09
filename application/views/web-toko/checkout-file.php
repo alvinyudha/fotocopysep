@@ -30,7 +30,7 @@
             </div>
             <hr>
             <?php
-            echo form_open('belanja/checkout');
+            echo form_open('belanja/checkoutfile');
             $no_order = date('Ymd') . strtoupper(random_string('alnum', 8));
 
             ?>
@@ -83,15 +83,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i = 1; ?>
+                            <?php 
+                            $i = 1;
+                            $cetak = $this->db->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array(); 
+                            ?>
 
-                            <?php foreach ($this->cart->contents() as $items) :
+                            <?php foreach ($cetak as $items) :
                             ?>
                                 <tr>
-                                    <td><?php echo $items['qty']; ?></td>
-                                    <td><?php echo $items['name']; ?></td>
-                                    <td>Rp. <?php echo number_format($items['price']); ?></td>
-                                    <td>Rp. <?php echo number_format($items['subtotal']); ?></td>
+                                    <td><?php echo $items['jumlah']; ?></td>
+                                    <td><?php echo $items['nama']; ?></td>
+                                    <input type="number" class="d-none form-control" name="id<?=$i;?>" value="<?= $items['id'];?>">
+                                    <td>Rp. <?php echo number_format($items['harga']); ?></td>
+                                    <td>Rp. <?php echo number_format($items['harga']); ?></td>
                                 </tr>
                                 <?php $i++; ?>
 
@@ -139,7 +143,10 @@
                         <table class="table">
                             <tr>
                                 <th style="width:70%">Total Bayar:</th>
-                                <td>Rp. <?php echo number_format($this->cart->total()); ?></td>
+                                <td>Rp. <?php 
+                                $total = $this->db->select_sum('harga')->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array(); 
+                                $harga = $total[0]['harga'];
+                                echo number_format($harga); ?></td>
                             </tr>
                         </table>
                     </div>
@@ -149,13 +156,13 @@
             <!-- /.row -->
             <!-- Simpan transaksi -->
             <input class="d-none" value="<?= $no_order ?>" name="no_order">
-            <input class="d-none" name="total_bayar" value="<?= $this->cart->total() ?>">
+            <input class="d-none" name="total_bayar" value="<?= $harga; ?>">
             <!-- end Simpan transaksi -->
             <!-- Simpan rincian transaksi -->
             <?php
             $i = 1;
-            foreach ($this->cart->contents() as $items) {
-                echo form_hidden('qty' . $i++, $items['qty']);
+            foreach ($cetak as $items) {
+                echo form_hidden('qty' . $i++, $items['jumlah']);
             } ?>
             <!-- End simpan rincian transaksi  -->
             <!-- this row will not appear when printing -->

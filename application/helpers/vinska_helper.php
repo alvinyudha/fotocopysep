@@ -10,7 +10,7 @@ function is_logged_in()
         $menu = $ci->uri->segment(1); //panggil ci ambil uri urutan pertama pada url setelah masuk session
 
         $queryMenu = $ci->db->get_where('tb_user_menu', ['menu' => $menu])->row_array();
-        $menu_id = $queryMenu['id'];
+        @$menu_id = $queryMenu['id'];
 
         $userAccess = $ci->db->get_where('tb_user_accessmenu', [
             'role_id' => $role_id,

@@ -23,6 +23,26 @@ class belanja extends CI_Controller
         $this->load->view('web-toko/belanja', $data);
         $this->load->view('template/footer-web');
     }
+
+    public function cetak()
+    {
+        $data = [
+            'tb_user' => $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array(),
+            'tittle' => 'Keranjang Cetak',
+            'kategori' => $this->db->get('tb_barang')->result_array(),
+        ];
+        $this->load->view('template/header-web', $data);
+        $this->load->view('web-toko/belanja-file', $data);
+        $this->load->view('template/footer-web');
+    }
+
+    public function hapuscetak($rowid)
+    {
+        $this->db->where('id', $rowid);
+        $this->db->delete('tb_filepesanan');
+        redirect('belanja/cetak');
+    }
+
     public function add()
     {
         $redirect_page = $this->input->post('redirect_page');
@@ -91,6 +111,56 @@ class belanja extends CI_Controller
             );
             $this->m_transaksi->simpan_transaksi($data);
             $i = 1;
+            foreach ($this->cart->contents() as $items) {
+                $data_rinci = array(
+                    'no_order' => $this->input->post('no_order'),
+                    'id_barang' => $items['id'],
+                    'qty' => $this->input->post('qty' . $i++),
+                );
+                $this->m_transaksi->simpan_rinci_transaksi($data_rinci);
+            }
+            $this->session->set_flashdata('pesan', 'Pesanan Berhasil Di Proses!!!');
+            redirect('pesanansaya');
+        }
+    }
+
+    public function checkoutfile()
+    {
+
+        $this->form_validation->set_rules('nama_penerima', 'nama_penerima', 'trim|required', ['required' => 'Tidak boleh kosong!']);
+        $this->form_validation->set_rules('alamat', 'alamat', 'trim|required', ['required' => 'Tidak boleh kosong!']);
+        $this->form_validation->set_rules('telp_penerima', 'telp_penerima', 'trim|required', ['required' => 'Tidak boleh kosong!']);
+
+        if ($this->form_validation->run() == false) {
+            $data = [
+                'tb_user' => $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array(),
+                'tittle' => 'Check Out',
+                'kategori' => $this->db->get('tb_kategori')->result_array()
+            ];
+            $this->load->view('template/header-web', $data);
+            $this->load->view('web-toko/checkout-file', $data);
+            $this->load->view('template/footer-web');
+        } else {
+            $data = array(
+                'id_user' => $this->session->userdata('id_user'),
+                'no_order' => $this->input->post('no_order'),
+                'tanggal' => date('Y-m-d'),
+                'nama_penerima' => $this->input->post('nama_penerima'),
+                'telp_penerima' => $this->input->post('telp_penerima'),
+                'alamat' => $this->input->post('alamat'),
+                'total_bayar' => $this->input->post('total_bayar'),
+                'status_bayar' => 0,
+                'status_order' => 0,
+            );
+            $this->m_transaksi->simpan_transaksi($data);
+            $i = 1;
+            $keranjang = $this->db->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->num_rows();
+            
+            for($k = 1; $k <= $keranjang; $k++){
+                $this->db->where('id', $this->input->post('id'.$k));
+                $this->db->update('tb_filepesanan', array('status' => 1));
+            }
+
             foreach ($this->cart->contents() as $items) {
                 $data_rinci = array(
                     'no_order' => $this->input->post('no_order'),
