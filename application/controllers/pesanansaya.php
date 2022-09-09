@@ -86,20 +86,6 @@ class pesanansaya extends CI_Controller
             redirect('pesanansaya');
         }
     }
-    public function cod($id_transaksi)
-    {
-        $data = array(
-            'atas_nama' => '',
-            'nama_bank' => '',
-            'no_rek' => '',
-            'status_bayar' => 2,
-        );
-
-        $this->db->where('id_transaksi', $id_transaksi);
-        $this->db->update('tb_transaksi', $data);
-        $this->session->set_flashdata('pesan', 'Pesanan anda telah dibayar!');
-        redirect('pesanansaya');
-    }
     public function hapus($id_transaksi)
     {
         $this->db->where('id_transaksi', $id_transaksi);
