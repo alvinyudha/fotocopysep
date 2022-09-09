@@ -152,58 +152,6 @@
                 </div>
             </li>
 
-            <?php
-            $keranjang = $this->db->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->num_rows();
-            ?>
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="fas fa-file"></i>
-                    <span class="badge badge-danger navbar-badge"><?= $keranjang ?></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <?php if (empty($keranjang)) { ?>
-                        <a href="#" class="dropdown-item">
-                            <p>Cetakan Kosong</p>
-                        </a>
-                        <?php } else {
-                        $barang = $this->db->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array();
-                        foreach ($barang as $value) {
-                        ?>
-                            <a href="#" class="dropdown-item">
-                                <div class="media">
-                                    <img src="<?= base_url('/assets/barang/') . $value['nama']  ?>" class="img-size-50 mr-3">
-                                    <div class="media-body">
-                                        <h3 class="dropdown-item-title">
-                                            <?= $value['nama'] ?>
-                                        </h3>
-                                        <p class="text-sm">Jumlah: <?= $value['jumlah'] ?></p>
-                                        <p class="text-sm text-muted"><i class="fa fa-calculator"></i> Rp.<?= $this->cart->format_number($value['harga']) ?></p>
-                                    </div>
-                                </div>
-                                <div class="dropdown-divider"></div>
-
-                            <?php } ?>
-                            <!-- cart end -->
-                            <a href="#" class="dropdown-item">
-                                <div class="media">
-                                    <div class="media-body">
-                                        <tr>
-                                            <td colspan="2"></td>
-                                            <td class="right"><strong>Total :</strong></td>
-                                            <td class="right">Rp.<?php 
-                                            $total = $this->db->select_sum('harga')->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array(); 
-                                            $harga = $total[0]['harga'];
-                                            echo number_format($harga); ?></td>
-                                        </tr>
-                                    </div>
-                                </div>
-                                <div class="dropdown-divider"></div>
-                                <a href="<?= base_url('belanja/cetak') ?>" class="dropdown-item dropdown-footer">Lihat</a>
-                                <a href="<?= base_url('belanja/checkoutfile') ?>" class="dropdown-item dropdown-footer">Check Out</a>
-                            <?php } ?>
-                </div>
-            </li>
-
             <!-- Login -->
             <li class="nav-item">
                 <?php if ($this->session->userdata('email') == "") { ?>

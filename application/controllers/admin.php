@@ -69,7 +69,7 @@ class admin extends CI_Controller
 
     public function changeaccess()
     {
-        $menu_id = $this->input->post('menuId'); //menerima objek data yang telah di ajax
+        $menu_id = $this->input->post('menuId');
         $role_id = $this->input->post('roleId');
 
         //menyiapkan data buat masuk ke query

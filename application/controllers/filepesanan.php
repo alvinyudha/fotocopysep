@@ -14,7 +14,7 @@ class filepesanan extends CI_Controller
     {
         $data['tittle'] = 'Data Cetak';
         $data['tb_user'] = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array(); //mengambil data dari user berdasarkan email yg ada di session 
-        $data['cetakfoto'] = $this->db->get_where('tb_filepesanan', ['status' => 1])->result_array();
+        $data['cetakfoto'] = $this->db->get_where('tb_cetakfoto')->result_array();
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);

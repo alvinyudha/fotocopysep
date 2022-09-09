@@ -163,7 +163,7 @@
                 <div class="col-12">
                     <!-- <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a> -->
                     <button type="submit" class="btn btn-success float-right"><i class="fas fa-credit-card"></i>
-                        Proses Pesanan
+                        Transfer
                     </button>
                 </div>
             </div>

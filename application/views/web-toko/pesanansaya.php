@@ -35,6 +35,7 @@
                         echo '</div>';
                     }
                     ?>
+                    <?= $this->session->flashdata('batal') ?>
                     <div class="card card-primary card-outline card-outline-tabs">
                         <div class="card-header p-0 border-bottom-0">
                             <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
@@ -42,7 +43,11 @@
                                     <a class="nav-link active" id="custom-tabs-four-pesanan-tab" data-toggle="pill" href="#custom-tabs-four-pesanan" role="tab" aria-controls="custom-tabs-four-pesanan" aria-selected="true">Pesanan</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="custom-tabs-four-diproses-tab" data-toggle="pill" href="#custom-tabs-four-diproses" role="tab" aria-controls="custom-tabs-four-diproses" aria-selected="false">Selesai</a>
+                                    <a class="nav-link" id="custom-tabs-four-diproses-tab" data-toggle="pill" href="#custom-tabs-four-diproses" role="tab" aria-controls="custom-tabs-four-diproses" aria-selected="false">Diproses</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" id="custom-tabs-four-selesai-tab" data-toggle="pill" href="#custom-tabs-four-selesai" role="tab" aria-controls="custom-tabs-four-selesai" aria-selected="false">Selesai</a>
                                 </li>
                             </ul>
                         </div>
@@ -66,9 +71,7 @@
                                                     <td><?= $b['telp_penerima']; ?></td>
                                                     <td><b>Rp.<?= number_format($b['total_bayar']) ?></b><br>
                                                         <?php if ($b['status_bayar'] == 0) { ?>
-                                                            <span class="badge badge-danger">Belum Bayar</span>
-                                                        <?php } elseif ($b['status_bayar'] == 2) { ?>
-                                                            <span class="badge badge-warning">Bayar COD</span>
+                                                            <span class="badge badge-warning">Belum Bayar</span>
                                                         <?php } else { ?>
                                                             <span class="badge badge-success">Sudah Bayar</span>
                                                             <span class="badge badge-info">Menunggu Verifikasi</span>
@@ -77,7 +80,6 @@
                                                     <td>
                                                         <?php if ($b['status_bayar'] == 0) { ?>
                                                             <a href="<?= base_url('pesanansaya/bayar/' . $b['id_transaksi']) ?>" class="btn btn-sm btn-primary">Bayar</a>
-                                                            <a href="<?= base_url('pesanansaya/cod/' . $b['id_transaksi']) ?>" class="btn btn-sm btn-warning">Bayar COD</a>
                                                             <a href="<?= base_url('pesanansaya/hapus/' . $b['id_transaksi']) ?>" class="btn btn-sm btn-danger">Batalkan</a>
                                                         <?php } ?>
                                                     </td>
@@ -102,9 +104,7 @@
                                                     <td><?= $d['telp_penerima']; ?></td>
                                                     <td><b>Rp.<?= number_format($d['total_bayar']) ?></b><br>
                                                         <?php if ($d['status_bayar'] == 0) { ?>
-                                                            <span class="badge badge-danger">Belum Bayar</span>
-                                                        <?php } elseif ($b['status_bayar'] == 2) { ?>
-                                                            <span class="badge badge-warning">Bayar COD</span>
+                                                            <span class="badge badge-warning">Belum Bayar</span>
                                                         <?php } else { ?>
                                                             <span class="badge badge-success">Terverifikasi</span>
                                                             <span class="badge badge-primary">Diproses</span>
@@ -114,6 +114,10 @@
                                             <?php endforeach; ?>
                                         </table>
                                     </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="custom-tabs-four-selesai" role="tabpanel" aria-labelledby="custom-tabs-four-selesai-tab">
+                                    Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
                                 </div>
                             </div>
                         </div>
