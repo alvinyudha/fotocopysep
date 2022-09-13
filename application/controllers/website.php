@@ -83,7 +83,7 @@ class website extends CI_Controller
         if ($nama = '') {
         } else {
             $config['upload_path']          = './assets/barang/';
-            $config['allowed_types']        = 'jpg|png|gif';
+            $config['allowed_types']        = 'jpg|jpeg|png|gif';
 
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
@@ -98,7 +98,7 @@ class website extends CI_Controller
             'ukuran' => $ukuran,
             'nama' => $nama,
             'id_user' => $id_user,
-            'harga' => $jumlah*$harga
+            'harga' => $jumlah * $harga
 
         );
         $this->db->insert('tb_filepesanan', $data);
@@ -132,7 +132,7 @@ class website extends CI_Controller
             'ukuran' => $ukuran,
             'nama' => $nama,
             'id_user' => $id_user,
-            'harga' => $jumlah*$harga
+            'harga' => $jumlah * $harga
 
         );
         $this->db->insert('tb_filepesanan', $data);
