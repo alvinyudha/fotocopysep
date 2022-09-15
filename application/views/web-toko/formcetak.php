@@ -47,18 +47,18 @@
 
                                 <div class="form-group">
                                     <label for="ukuran">Ukuran</label>
-                                    <input type="text" class="form-control" name="ukuran" value="<?= $foto['paket'][0] . $foto['paket'][1] . $foto['paket'][2];?>" readonly>
+                                    <input type="text" class="form-control" name="ukuran" value="<?= $foto['paket'][0] . $foto['paket'][1] . $foto['paket'][2]; ?>" readonly>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="jumlah">Jumlah</label>
-                                    <input type="number" class="form-control" name="jumlah" min="<?=$foto['lembar'];?>" value="<?= $foto['lembar'];?>">
+                                    <input type="number" class="form-control" name="jumlah" min="<?= $foto['lembar']; ?>" value="<?= $foto['lembar']; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="d-none form-control" name="harga" value="<?= ($foto['harga']/$foto['lembar']);?>">
+                                    <input type="number" class="d-none form-control" name="harga" value="<?= ($foto['harga'] / $foto['lembar']); ?>">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="d-none form-control" name="id_user" value="<?= $this->session->userdata('id_user');?>">
+                                    <input type="text" class="d-none form-control" name="id_user" value="<?= $this->session->userdata('id_user'); ?>">
                                 </div>
                             </div>
                             <!-- /.card-body -->

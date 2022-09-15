@@ -36,6 +36,7 @@
                                 <table class="table">
                                     <tr>
                                         <th>No Order</th>
+                                        <th>Nama Pelanggan</th>
                                         <th>Tanggal</th>
                                         <th>Telepon</th>
                                         <th>Total Bayar</th>
@@ -44,6 +45,7 @@
                                     <?php foreach ($pesanan as $p) : ?>
                                         <tr>
                                             <td><?= $p['no_order']; ?></td>
+                                            <td><?= $p['nama_penerima']; ?></td>
                                             <td><?= $p['tanggal']; ?></td>
                                             <td><?= $p['telp_penerima']; ?></td>
                                             <td><b>Rp. <?= number_format($p['total_bayar']) ?></b><br>
@@ -70,6 +72,7 @@
                                 <table class="table">
                                     <tr>
                                         <th>No Order</th>
+                                        <th>Nama Pelanggan</th>
                                         <th>Tanggal</th>
                                         <th>Telepon</th>
                                         <th>Total Bayar</th>
@@ -78,6 +81,7 @@
                                     <?php foreach ($pesanan_diproses as $p) : ?>
                                         <tr>
                                             <td><?= $p['no_order']; ?></td>
+                                            <td><?= $p['nama_penerima']; ?></td>
                                             <td><?= $p['tanggal']; ?></td>
                                             <td><?= $p['telp_penerima']; ?></td>
                                             <td><b>Rp. <?= number_format($p['total_bayar']) ?></b><br>

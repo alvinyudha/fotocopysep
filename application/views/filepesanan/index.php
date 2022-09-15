@@ -20,6 +20,7 @@
                     <thead>
                         <tr>
                             <th scope="col">No</th>
+                            <th scope="col">Nama Pelanggan</th>
                             <th scope="col">Nama File</th>
                             <th scope="col">Jumlah</th>
                             <th scope="col">Ukuran</th>
@@ -34,14 +35,16 @@
                         <?php foreach ($cetakfoto as $c) : ?>
                             <tr>
                                 <th scope="row"><?= $i; ?></th>
+                                <td><?= $c['nama_pelanggan']; ?></td>
                                 <td><?= $c['nama']; ?></td>
-                                <td><?= $c['jumlah'];?></td>
-                                <td><?= $c['ukuran'];?></td>
+                                <td><?= $c['jumlah']; ?></td>
+                                <td><?= $c['ukuran']; ?></td>
                                 <td>
                                     <img src="<?= base_url('/assets/barang/') . $c['nama']; ?>" width="150px" class="img-thumbnail">
                                 </td>
                                 <td>Rp.<?= number_format($c['harga']); ?></td>
-                                <td><?php $date =date_create($c['tanggal']); echo date_format($date, 'd F Y / H:i'); ?></td>
+                                <td><?php $date = date_create($c['tanggal']);
+                                    echo date_format($date, 'd F Y / H:i'); ?></td>
                                 <td>
                                     <a href="<?= base_url('/assets/barang/') . $c['nama']; ?>" download="<?= $c['nama']; ?>" type="button" class="btn btn-primary">Unduh</a>
                                 </td>

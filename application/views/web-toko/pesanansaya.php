@@ -49,7 +49,6 @@
                         <div class="card-body">
                             <div class="tab-content" id="custom-tabs-four-tabContent">
                                 <div class="tab-pane fade show active" id="custom-tabs-four-pesanan" role="tabpanel" aria-labelledby="custom-tabs-four-pesanan-tab">
-                                    <div class="row"><span>Klik Cetak Untuk Melakukan Pembayaran Secara Tunai</span></div> <br>
                                     <div class="table-container">
                                         <table class="table">
                                             <tr>

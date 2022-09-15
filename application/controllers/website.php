@@ -78,13 +78,11 @@ class website extends CI_Controller
         $ukuran = $this->input->post('ukuran');
         $harga = $this->input->post('harga');
         $id_user = $this->input->post('id_user');
-
         $nama = $_FILES['nama'];
         if ($nama = '') {
         } else {
             $config['upload_path']          = './assets/barang/';
             $config['allowed_types']        = 'jpg|jpeg|png|gif';
-
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
             if (!$this->upload->do_upload('nama')) {
@@ -112,12 +110,13 @@ class website extends CI_Controller
         $ukuran = $this->input->post('ukuran');
         $harga = $this->input->post('harga');
         $id_user = $this->input->post('id_user');
+        $nama_pelanggan = $this->input->post('nama_pelanggan');
 
         $nama = $_FILES['nama'];
         if ($nama = '') {
         } else {
             $config['upload_path']          = './assets/barang/';
-            $config['allowed_types']        = 'pdf';
+            $config['allowed_types']        = 'pdf|jpg|jpeg';
 
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
@@ -131,6 +130,7 @@ class website extends CI_Controller
             'jumlah' => $jumlah,
             'ukuran' => $ukuran,
             'nama' => $nama,
+            'nama_pelanggan' => $nama_pelanggan,
             'id_user' => $id_user,
             'harga' => $jumlah * $harga
 
