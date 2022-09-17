@@ -29,7 +29,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="<?= base_url('website/tambahfilecetak') ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?= base_url('layanan/tambahfilecetak') ?>" method="post" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="file">File input</label>
