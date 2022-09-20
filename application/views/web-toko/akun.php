@@ -121,13 +121,13 @@
                                                         <label for="kelamin" class="col-sm-3 col-form-label">Jenis Kelamin</label>
                                                         <div class="col-sm-9">
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="radio" name="kelamin" value="Pria" <?php echo set_radio('kelamin', 'pria', true) ?>>
+                                                                <input class="form-check-input" type="radio" name="kelamin" value="Pria" <?= ($tb_user['kelamin'] == "Pria" || $tb_user['kelamin'] == "pria") ? set_radio('kelamin', 'pria', true):"" ?>>
                                                                 <label class="form-check-label">
                                                                     Pria
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="radio" name="kelamin" value="Wanita" <?php echo set_radio('kelamin', 'wanita', true) ?>>
+                                                                <input class="form-check-input" type="radio" name="kelamin" value="Wanita" <?= ($tb_user['kelamin'] == "Wanita" || $tb_user['kelamin'] == "wanita") ? set_radio('kelamin', 'wanita', true):"" ?>>
                                                                 <label class="form-check-label">
                                                                     Wanita
                                                                 </label>

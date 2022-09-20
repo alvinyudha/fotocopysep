@@ -21,7 +21,7 @@
                             <a class="nav-link active" id="custom-tabs-four-pesanan-tab" data-toggle="pill" href="#custom-tabs-four-pesanan" role="tab" aria-controls="custom-tabs-four-pesanan" aria-selected="true">Pesanan Masuk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="custom-tabs-four-diproses-tab" data-toggle="pill" href="#custom-tabs-four-diproses" role="tab" aria-controls="custom-tabs-four-diproses" aria-selected="false">Diproses</a>
+                            <a class="nav-link" id="custom-tabs-four-diproses-tab" data-toggle="pill" href="#custom-tabs-four-diproses" role="tab" aria-controls="custom-tabs-four-diproses" aria-selected="false">Pesanan Selesai</a>
                         </li>
                     </ul>
                 </div>
