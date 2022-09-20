@@ -23,10 +23,6 @@
                         <li class="nav-item">
                             <a class="nav-link" id="custom-tabs-four-diproses-tab" data-toggle="pill" href="#custom-tabs-four-diproses" role="tab" aria-controls="custom-tabs-four-diproses" aria-selected="false">Diproses</a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" id="custom-tabs-four-selesai-tab" data-toggle="pill" href="#custom-tabs-four-selesai" role="tab" aria-controls="custom-tabs-four-selesai" aria-selected="false">Selesai</a>
-                        </li>
                     </ul>
                 </div>
                 <div class="card-body">
@@ -50,15 +46,17 @@
                                             <td><?= $p['telp_penerima']; ?></td>
                                             <td><b>Rp. <?= number_format($p['total_bayar']) ?></b><br>
                                                 <?php if ($p['status_bayar'] == 0) { ?>
-                                                    <span class="badge badge-warning">Belum Bayar</span>
-                                                <?php } else { ?>
+                                                    <span class="badge badge-danger">Belum Bayar</span>
+                                                <?php } elseif ($p['status_bayar'] == 1) { ?>
                                                     <span class="badge badge-success">Sudah Bayar</span>
                                                     <span class="badge badge-info">Menunggu Verifikasi</span>
+                                                <?php } elseif ($p['status_bayar'] == 2) { ?>
+                                                    <span class="badge badge-warning">Bayar COD</span>
                                                 <?php } ?>
                                             </td>
                                             <td>
-                                                <?php if ($p['status_bayar'] == 1) { ?>
-                                                    <a href="" class="btn btn-sm btn btn-success" data-toggle="modal" data-target="#cek<?= $p['id_transaksi'] ?>">Cek Bukti Bayar</a>
+                                                <?php if ($p['status_bayar'] == 1 || $p['status_bayar'] == 2) { ?>
+                                                    <a href="" class="<?= ($p['status_bayar'] == 1) ? "":"d-none" ?> btn btn-sm btn btn-success" data-toggle="modal" data-target="#cek<?= $p['id_transaksi'] ?>">Cek Bukti Bayar</a>
                                                     <a href="<?= base_url('pesananmasuk/proses/' . $p['id_transaksi']) ?>" class="btn btn-sm btn-primary">Proses</a>
                                                 <?php } ?>
                                             </td>
@@ -96,10 +94,6 @@
                                     <?php endforeach; ?>
                                 </table>
                             </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="custom-tabs-four-selesai" role="tabpanel" aria-labelledby="custom-tabs-four-selesai-tab">
-                            Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
                         </div>
                     </div>
                 </div>
