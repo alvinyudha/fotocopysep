@@ -60,6 +60,10 @@
 <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
 <script>
     $(document).ready(function() {
+        $('#dataTable').DataTable();
+    } );
+
+    $(document).ready(function() {
         $('#example').DataTable( {
             dom: 'Bfrtip',
             buttons: [
