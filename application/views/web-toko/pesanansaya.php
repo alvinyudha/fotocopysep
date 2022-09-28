@@ -102,7 +102,7 @@
                                                     <td><b>Rp.<?= number_format($d['total_bayar']) ?></b><br>
                                                         <?php if ($d['status_bayar'] == 0) { ?>
                                                             <span class="badge badge-danger">Belum Bayar</span>
-                                                        <?php } elseif ($b['status_bayar'] == 2) { ?>
+                                                        <?php } elseif ($d['status_bayar'] == 2) { ?>
                                                             <span class="badge badge-warning">Bayar COD</span>
                                                         <?php } else { ?>
                                                             <span class="badge badge-success">Terverifikasi</span>

@@ -21,6 +21,7 @@
                             <table id="example" class="table" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th>No</th>
                                         <th>No Order</th>
                                         <th>Nama Pelanggan</th>
                                         <th>Tanggal</th>
@@ -29,8 +30,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($pesanan_diproses as $p) : ?>
+                                    <?php $no = 1;
+                                    foreach ($pesanan_diproses as $p) : ?>
                                         <tr>
+                                            <td><?= $no; ?></td>
                                             <td><?= $p['no_order']; ?></td>
                                             <td><?= $p['nama_penerima']; ?></td>
                                             <td><?= date_format(new DateTime($p['tanggal']), "d F Y"); ?></td>
@@ -38,7 +41,8 @@
                                             <td><b>Rp. <?= number_format($p['total_bayar']) ?></b><br>
                                             </td>
                                         </tr>
-                                    <?php endforeach; ?>
+                                    <?php $no++;
+                                    endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

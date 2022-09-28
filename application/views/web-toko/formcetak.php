@@ -51,7 +51,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="jumlah">Jumlah</label>
+                                    <label for="jumlah">Jumlah Minimal</label>
                                     <input type="number" class="form-control" name="jumlah" min="<?= $foto['lembar']; ?>" value="<?= $foto['lembar']; ?>">
                                 </div>
                                 <div class="form-group">

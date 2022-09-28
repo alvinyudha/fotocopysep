@@ -45,9 +45,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" id="custom-tabs-four-alamat-tab" data-toggle="pill" href="#custom-tabs-four-alamat" role="tab" aria-controls="custom-tabs-four-alamat" aria-selected="false">Alamat</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" id="custom-tabs-four-settings-tab" data-toggle="pill" href="#custom-tabs-four-settings" role="tab" aria-controls="custom-tabs-four-settings" aria-selected="false">Settings</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <div class="card-body">
@@ -82,7 +82,6 @@
                                                             Ubah Kata Sandi
                                                         </a>
                                                     </li>
-
                                                 </ul>
                                             </div>
                                         </div>
@@ -121,13 +120,13 @@
                                                         <label for="kelamin" class="col-sm-3 col-form-label">Jenis Kelamin</label>
                                                         <div class="col-sm-9">
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="radio" name="kelamin" value="Pria" <?= ($tb_user['kelamin'] == "Pria" || $tb_user['kelamin'] == "pria") ? set_radio('kelamin', 'pria', true):"" ?>>
+                                                                <input class="form-check-input" type="radio" name="kelamin" value="Pria" <?= ($tb_user['kelamin'] == "Pria" || $tb_user['kelamin'] == "pria") ? set_radio('kelamin', 'pria', true) : "" ?>>
                                                                 <label class="form-check-label">
                                                                     Pria
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="radio" name="kelamin" value="Wanita" <?= ($tb_user['kelamin'] == "Wanita" || $tb_user['kelamin'] == "wanita") ? set_radio('kelamin', 'wanita', true):"" ?>>
+                                                                <input class="form-check-input" type="radio" name="kelamin" value="Wanita" <?= ($tb_user['kelamin'] == "Wanita" || $tb_user['kelamin'] == "wanita") ? set_radio('kelamin', 'wanita', true) : "" ?>>
                                                                 <label class="form-check-label">
                                                                     Wanita
                                                                 </label>
@@ -149,7 +148,6 @@
                                                             <a href="<?= base_url('website'); ?>" class="btn btn-danger ">Kembali</a>
                                                         </div>
                                                     </div>
-
                                                     <?= form_close() ?>
                                                 </div>
                                             </div>
@@ -173,10 +171,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
+                                <!-- <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
                                     test 3
-
-                                </div>
+                                </div> -->
                             </div>
                             <br>
                             <!-- /.card -->

@@ -56,7 +56,7 @@
                                             </td>
                                             <td>
                                                 <?php if ($p['status_bayar'] == 1 || $p['status_bayar'] == 2) { ?>
-                                                    <a href="" class="<?= ($p['status_bayar'] == 1) ? "":"d-none" ?> btn btn-sm btn btn-success" data-toggle="modal" data-target="#cek<?= $p['id_transaksi'] ?>">Cek Bukti Bayar</a>
+                                                    <a href="" class="<?= ($p['status_bayar'] == 1) ? "" : "d-none" ?> btn btn-sm btn btn-success" data-toggle="modal" data-target="#cek<?= $p['id_transaksi'] ?>">Cek Bukti Bayar</a>
                                                     <a href="<?= base_url('pesananmasuk/proses/' . $p['id_transaksi']) ?>" class="btn btn-sm btn-primary">Proses</a>
                                                 <?php } ?>
                                             </td>
@@ -85,11 +85,11 @@
                                             <td><b>Rp. <?= number_format($p['total_bayar']) ?></b><br>
                                                 <span class="badge badge-primary">Diproses</span>
                                             </td>
-                                            <td>
+                                            <!-- <td>
                                                 <?php if ($p['status_bayar'] == 1) { ?>
                                                     <a href="" data-toggle="modal" data-target="#kirim<?= $p['id_transaksi'] ?>" class="btn btn-sm btn-primary"><i class="fa fa-send"></i> Kirim</a>
                                                 <?php } ?>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                     <?php endforeach; ?>
                                 </table>

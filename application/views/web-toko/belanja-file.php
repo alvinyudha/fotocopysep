@@ -41,14 +41,14 @@
 
                             <?php $i = 1; ?>
 
-                            <?php 
-                                $barang = $this->db->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array();
+                            <?php
+                            $barang = $this->db->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array();
 
-                                foreach ($barang as $items) :
+                            foreach ($barang as $items) :
                             ?>
                                 <tr>
                                     <td>
-                                    <?php echo $items['jumlah']; ?>
+                                        <?php echo $items['jumlah']; ?>
                                     </td>
                                     <td><?php echo $items['nama']; ?></td>
                                     <td class="text-align:right"> <img src="<?= base_url('/assets/barang/') . $items['nama']  ?>" class="img-size-50 "></td>
@@ -70,9 +70,9 @@
                                 </td>
                                 <td class="right">
                                     <strong>Rp. <?php
-                                    $total = $this->db->select_sum('harga')->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array(); 
-                                    $harga = print_r($total[0]['harga']);
-                                    number_format($harga); ?></strong>
+                                                $total = $this->db->select_sum('harga')->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array();
+                                                $harga = print_r($total[0]['harga']);
+                                                number_format($harga); ?></strong>
                                 </td>
                             </tr>
 
