@@ -112,13 +112,6 @@
                                                     <div class="row mb-3">
                                                         <label for="kelamin" class="col-sm-3 col-form-label">Jenis Kelamin</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="kelamin" name="kelamin" value="<?= $tb_user['kelamin'] ?>">
-                                                            <?= form_error('kelamin', '<small class="text-danger pl-3">', '</small>'); ?>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <label for="kelamin" class="col-sm-3 col-form-label">Jenis Kelamin</label>
-                                                        <div class="col-sm-9">
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio" name="kelamin" value="Pria" <?= ($tb_user['kelamin'] == "Pria" || $tb_user['kelamin'] == "pria") ? set_radio('kelamin', 'pria', true) : "" ?>>
                                                                 <label class="form-check-label">

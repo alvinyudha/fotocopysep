@@ -44,7 +44,7 @@ class auth extends CI_Controller
             //jika usernya aktif
             if ($tb_user['is_actived'] == 1) {
                 //cek password
-                if (password_verify($password, $tb_user['password'])) {  // menyamakan antara password yang sudah diketik dilogin form dengan pass yg sudah dihash(enkripsi)
+                if (password_verify($password, $tb_user['password'])) {
                     $data = [
                         'email' => $tb_user['email'],
                         'id_user' => $tb_user['id_user'],
@@ -57,16 +57,16 @@ class auth extends CI_Controller
                     } else {
                         redirect('website');
                     }
-                } else { //jika gagal maka 
+                } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Salah</div>');
                     redirect('auth');
                 }
-            } else { //jika user tidak aktif maka
+            } else {
 
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email ini belum melakukan aktivasi!</div>');
                 redirect('auth');
             }
-        } else { //jika tidak ada user
+        } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email ini belum terdaftar!</div>');
             redirect('auth');
         }
@@ -82,7 +82,7 @@ class auth extends CI_Controller
         //RULES
         $this->form_validation->set_rules('name', 'Name', 'required|trim', [
             'required' => 'Masukkan nama'
-        ]); // trim berfungsi supaya saat menyisakan spasi didepan/dibelakang tulisan tidak masuk ke database
+        ]);
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tb_user.email]', [
             'is_unique' => 'Email ini sudah terdaftar',
             'required' => 'Masukkan alamat email',
@@ -92,19 +92,18 @@ class auth extends CI_Controller
             'required' => 'Masukkan kata sandi',
             'matches' => 'Kedua kata sandi tidak sama',
             'min_length' => 'Kata sandi terlalu pendek'
-        ]); // matches berfungsi supaya dua password sama
-        $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]',); // min_length tak perlu ditulis lagi karna sudah mengikuti yang ke satu
+        ]);
+        $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]',);
 
-        if ($this->form_validation->run() == false) { //kalo form validasinya gagal maka akan menampilkan kembali form regis yg dibawah
+        if ($this->form_validation->run() == false) {
             $this->load->view('auth/registration', $data);
-        } else { //kalo berhasil maka data masuk ke database
+        } else {
             $email = $this->input->post('email', true);
             $data = [
                 'name' => htmlspecialchars($this->input->post('name', true)),
                 'email' => htmlspecialchars($email),
                 'image' => 'default.jpg',
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                // 'password' => $this->input->post('password1'),
                 'role_id' => 2,
                 'is_actived' => 0,
                 'date_created' => time()

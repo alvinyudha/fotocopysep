@@ -36,7 +36,7 @@ class website extends CI_Controller
     {
 
         $data = [
-            'tittle' => 'Detail Barang',
+            'tittle' => 'Detail Produk',
             'tb_user' => $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array(),
             'barang' => $this->m_model->getDataBarangById($id_barang),
             'kategori' => $this->db->get('tb_kategori')->result_array()
@@ -78,6 +78,7 @@ class website extends CI_Controller
         $ukuran = $this->input->post('ukuran');
         $harga = $this->input->post('harga');
         $id_user = $this->input->post('id_user');
+        $nama_pelanggan = $this->input->post('nama_pelanggan');
         $nama = $_FILES['nama'];
         if ($nama = '') {
         } else {
@@ -96,6 +97,7 @@ class website extends CI_Controller
             'ukuran' => $ukuran,
             'nama' => $nama,
             'id_user' => $id_user,
+            'nama_pelanggan' => $nama_pelanggan,
             'harga' => $jumlah * $harga
 
         );

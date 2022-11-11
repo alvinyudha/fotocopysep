@@ -36,7 +36,7 @@
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" name="nama" class="custom-file-input" id="nama">
-                                            <label class="custom-file-label" for="file">Choose file .pdf</label>
+                                            <label class="custom-file-label" for="file">Choose file</label>
                                         </div>
                                         <div class="input-group-append">
                                             <span class="input-group-text">Upload</span>

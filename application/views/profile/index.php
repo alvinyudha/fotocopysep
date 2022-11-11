@@ -14,7 +14,7 @@
         <div class="card-body">
             <h5 class="card-tittle"><?= $tb_user['name']; ?></h5>
             <p class="card-text"><?= $tb_user['email']; ?></p>
-            <p class="card-text">Since <?= date('d F Y', $tb_user['date_created']); ?></p>
+            <!-- <p class="card-text">Since <?= date('d F Y', $tb_user['date_created']); ?></p> -->
         </div>
     </div>
 

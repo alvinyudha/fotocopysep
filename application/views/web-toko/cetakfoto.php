@@ -29,16 +29,8 @@
                                     </h4>
                                 </div>
                                 <div class="card-body pt-0">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="lead"></h2>
-                                            <!-- <ul class="ml-4 mb-0 fa-ul text-muted">
-                                                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
-                                            </ul> -->
-                                        </div>
-                                        <div class="col-5 text-center">
-                                            <img src="<?= base_url('/assets/barang/') . $c['gambar']; ?>" class="img-fluid">
-                                        </div>
+                                    <div class="col-5">
+                                        <img src="<?= base_url('/assets/barang/') . $c['gambar']; ?>" class="img-fluid">
                                     </div>
                                 </div>
                                 <div class="card-footer">
@@ -55,7 +47,7 @@
                                                 <?= form_open('website/formcetak/' . $c['id']) ?>
                                                 <button class="btn btn-sm btn-primary" type="submit">
                                                     <input class="d-none" type="text" name="ukuran" value="<?= $c['paket'] ?>">
-                                                    <i class="fa fa-fw fa-eye"></i> Pilih
+                                                    Pilih
                                                 </button>
                                                 <?= form_close() ?>
                                             </div>

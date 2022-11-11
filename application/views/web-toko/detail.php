@@ -36,17 +36,18 @@
                     <div class="col-12 col-sm-6">
                         <h3 class="my-3 d-none d-sm-block"><?= $barang['nama_barang'] ?></h3>
                         <hr>
-                        <h5><?= $barang['nama_kategori'] ?></h5>
+                        <h5><?= $barang['merk'] ?></h5>
                         <p>
                             <?= $barang['deskripsi'] ?>
                         </p>
                         <hr>
+                        <br>
                         <div class="badge bg-success py-2 px-3  text-white">
                             <h2 class="mb-0">
-                                Rp.<?= number_format($barang['harga_barang']) ?>.00
+                                Rp. <?= number_format($barang['harga_barang']) ?>.00
                             </h2>
                         </div>
-                        <hr>
+
                         <?php
                         echo form_open('belanja/add');
                         echo form_hidden('id', $barang['id_barang']);
@@ -60,8 +61,8 @@
                                 <div class="col-sm-2">
                                     <input type="number" name="qty" class="form-control" value="1" min="1">
                                 </div>
-                                <div class="col-sm-8 col-xs-2">
-                                    <button type="submit" class="btn btn-primary btn-lg btn-flat swalDefaultSuccess">
+                                <div class="col-sm-5">
+                                    <button type="submit" class="btn btn-primary swalDefaultSuccess" style="border-radius: 10px;">
                                         <i class="fas fa-cart-plus fa-lg mr-2"></i>
                                         Add to Cart
                                     </button>
@@ -70,7 +71,7 @@
                         </div>
                         <?php echo form_close(); ?>
 
-                        <div class="mt-4 product-share">
+                        <!-- <div class="mt-4 product-share">
                             <a href="#" class="text-gray">
                                 <i class="fab fa-facebook-square fa-2x"></i>
                             </a>
@@ -83,7 +84,7 @@
                             <a href="#" class="text-gray">
                                 <i class="fas fa-rss-square fa-2x"></i>
                             </a>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>

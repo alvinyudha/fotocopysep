@@ -37,7 +37,7 @@
 
             <!-- info row -->
             <div class="row invoice-info">
-                <div class="col-sm-4 invoice-col">
+                <!-- <div class="col-sm-4 invoice-col">
                     From
                     <address>
                         <strong>Admin, Inc.</strong><br>
@@ -47,7 +47,7 @@
                         Email: info@almasaeedstudio.com
                     </address>
                 </div>
-                <!-- /.col -->
+          
                 <div class="col-sm-4 invoice-col">
                     To
                     <address>
@@ -58,15 +58,12 @@
                         Email: john.doe@example.com
                     </address>
                 </div>
-                <!-- /.col -->
+           -->
                 <div class="col-sm-4 invoice-col">
-                    <b>Invoice #007612</b><br>
-                    <br>
                     <b>Order ID: </b> <?= $no_order ?><br>
-                    <b>Payment Due:</b> 2/22/2014<br>
-                    <b>Account:</b> 968-34567
+                    <br>
                 </div>
-                <!-- /.col -->
+
             </div>
             <!-- /.row -->
 

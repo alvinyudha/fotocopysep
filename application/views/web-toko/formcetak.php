@@ -60,6 +60,9 @@
                                 <div class="form-group">
                                     <input type="text" class="d-none form-control" name="id_user" value="<?= $this->session->userdata('id_user'); ?>">
                                 </div>
+                                <div class="form-group">
+                                    <input type="text" class="d-none form-control" name="nama_pelanggan" value="<?= $tb_user['name'] ?>">
+                                </div>
                             </div>
                             <!-- /.card-body -->
 

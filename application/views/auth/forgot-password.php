@@ -35,7 +35,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: #f1f1f1;
+            background: #ffffff;
             border-radius: 10px;
         }
 
@@ -47,12 +47,13 @@
             margin: 0 21px 10px 0;
             width: 250px;
             height: 40px;
-            border-radius: 3px;
-            background: #e9e9e9;
-            border: #e9e9e9;
+            border-radius: 8px;
+            background: transparent;
+            border: 1px solid #dddddd;
             padding-left: 45px;
             font-size: 14px;
             letter-spacing: .5px;
+            outline-color: #1a99ee;
         }
 
         .text-center {

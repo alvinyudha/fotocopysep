@@ -93,7 +93,7 @@
                     </a>
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">
+                        <!-- <a class="dropdown-item" href="#">
                             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                             Profile
                         </a>
@@ -105,7 +105,7 @@
                             <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                             Activity Log
                         </a>
-                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-divider"></div> -->
                         <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
                             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                             Logout
@@ -132,7 +132,7 @@
                     <a href="" class="btn btn-info mb-3" data-toggle="modal" data-target="#tambahModal">Tambah Barang</a>
                 </div>
                 <div class="table-container">
-                    <table class="table table-bordered">
+                    <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th scope="col" class="column-primary" data-header="Data Barang"><span>No</span> </th>
@@ -147,7 +147,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             <?php
                             foreach ($barang as $b) : ?>
                                 <tr>

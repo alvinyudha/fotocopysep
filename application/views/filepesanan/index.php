@@ -46,7 +46,8 @@
                                 <td><?php $date = date_create($c['tanggal']);
                                     echo date_format($date, 'd F Y / H:i'); ?></td>
                                 <td>
-                                    <a href="<?= base_url('/assets/barang/') . $c['nama']; ?>" download="<?= $c['nama']; ?>" type="button" class="btn btn-primary">Unduh</a>
+                                    <a href="<?= base_url('/assets/barang/') . $c['nama']; ?>" download="<?= $c['nama']; ?>" type="button" class="badge badge-primary">Unduh</a>
+                                    <a href="<?= base_url('filepesanan/hapus/') . $c['id']; ?>" class="badge badge-danger" onclick="return confirm('yakin untuk menghapus?') "><i class="fa fa-trash"></i>Hapus</a>
                                 </td>
                             </tr>
                             <?php $i++; ?>

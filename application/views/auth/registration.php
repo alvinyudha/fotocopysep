@@ -35,7 +35,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: #f1f1f1;
+            background-color: #ffffff;
             border-radius: 10px;
         }
 
@@ -45,15 +45,16 @@
 
         form .form-group input {
             margin: 0 5px 10px 5px;
-            width: 250px;
-            height: 40px;
-            border-radius: 3px;
-            background: #e9e9e9;
-            border: #e9e9e9;
             padding-left: 13px;
             padding-right: 34px;
+            width: 250px;
+            height: 40px;
+            border-radius: 8px;
+            background: transparent;
+            border: 1px solid #dddddd;
             font-size: 14px;
             letter-spacing: .5px;
+            outline-color: #1a99ee;
         }
 
         .text-center {

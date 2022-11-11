@@ -35,7 +35,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: #f1f1f1;
+            background-color: #ffffff;
             border-radius: 10px;
         }
 
@@ -47,12 +47,13 @@
             margin: 0 21px 10px 0;
             width: 250px;
             height: 40px;
-            border-radius: 3px;
-            background: #e9e9e9;
-            border: #e9e9e9;
+            border-radius: 8px;
+            background: transparent;
+            border: 1px solid #dddddd;
             padding-left: 45px;
             font-size: 14px;
             letter-spacing: .5px;
+            outline-color: #1a99ee;
         }
 
         .text-center {
@@ -121,12 +122,12 @@
                 <h5 class="error-message"><?= form_error('password1'); ?></h5>
                 <div class="form-group">
                     <i class="fas fa-key"></i>
-                    <input type="password" class="form-control form-control-user" id="password1" name="password1" placeholder="Masukkan Password Baru">
+                    <input type="password" class="form-control form-control-user" id="password1" name="password1" placeholder="Masukkan Kata Sandi Baru">
                 </div>
                 <h5 class="error-message"><?= form_error('password2'); ?></h5>
                 <div class="form-group">
                     <i class="fas fa-key"></i>
-                    <input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Ulangi Password">
+                    <input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Ulangi Kata Sandi">
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-user btn-block">
