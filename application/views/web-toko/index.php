@@ -34,7 +34,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
                 <div class="col-xl-3 col-md-6">
-                    <div class="card bg-teal text-white mb-4">
+                    <div class="card bg-primary text-white mb-4">
                         <div class="card-body">Print</div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="<?= base_url('layanan/print'); ?>">View Details</a>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6">
-                    <div class="card bg-teal text-white mb-4">
+                    <div class="card bg-primary text-white mb-4">
                         <div class="card-body">Cetak Foto</div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="<?= base_url('website/cetakfoto'); ?>">View Details</a>

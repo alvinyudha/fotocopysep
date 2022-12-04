@@ -31,7 +31,7 @@ class layanan extends CI_Controller
         if ($nama = '') {
         } else {
             $config['upload_path']          = './assets/barang/';
-            $config['allowed_types']        = 'pdf|jpg|jpeg';
+            $config['allowed_types']        = 'pdf|jpg|jpeg|docx|xlsx';
 
             $this->load->library('upload', $config);
             $this->upload->initialize($config);

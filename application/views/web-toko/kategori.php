@@ -52,13 +52,7 @@
                                     <h5 class="fw-bolder"><?= $b['nama_barang'] ?></h5>
                                     <p class="text-muted text-sm"><b>Kategori : </b> <?= $b['nama_kategori'] ?></p>
                                     <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
+
                                     <!-- Product price-->
                                     <h5>
                                         <span class="badge bg-success">

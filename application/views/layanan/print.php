@@ -48,7 +48,6 @@
                                     <label for="ukuran">Ukuran</label>
                                     <select class="form-select" aria-label="Default select example" name="ukuran">
                                         <option selected>Pilih Ukuran</option>
-                                        <option value="Full Kertas Foto A4">Full Kertas Foto A4</option>
                                         <option value="A4">A4</option>
                                         <option value="A5">A5</option>
                                     </select>
@@ -61,7 +60,6 @@
                                     <label for="jumlah">Harga</label>
                                     <select class="form-select" aria-label="Default select example" name="harga">
                                         <option selected>Pilih Harga</option>
-                                        <option value="10000">Full Kertas Foto A4 Rp.10000/lbr</option>
                                         <option value="100">Rp.100/lbr Hitam Putih</option>
                                         <option value="500">Rp.500/lbr Warna</option>
                                     </select>

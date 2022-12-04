@@ -44,9 +44,9 @@
                 <li class="nav-item">
                     <a href="<?= base_url('website') ?>" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="#" class="nav-link">Contact</a>
-                </li>
+                </li> -->
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori</a>
@@ -190,10 +190,10 @@
                                         <tr>
                                             <td colspan="2"></td>
                                             <td class="right"><strong>Total :</strong></td>
-                                            <td class="right">Rp.<?php 
-                                            $total = $this->db->select_sum('harga')->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array(); 
-                                            $harga = $total[0]['harga'];
-                                            echo number_format($harga); ?></td>
+                                            <td class="right">Rp.<?php
+                                                                    $total = $this->db->select_sum('harga')->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array();
+                                                                    $harga = $total[0]['harga'];
+                                                                    echo number_format($harga); ?></td>
                                         </tr>
                                     </div>
                                 </div>

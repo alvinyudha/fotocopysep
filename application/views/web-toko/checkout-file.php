@@ -37,34 +37,11 @@
 
             <!-- info row -->
             <div class="row invoice-info">
-                <div class="col-sm-4 invoice-col">
-                    From
-                    <address>
-                        <strong>Admin, Inc.</strong><br>
-                        795 Folsom Ave, Suite 600<br>
-                        San Francisco, CA 94107<br>
-                        Phone: (804) 123-5432<br>
-                        Email: info@almasaeedstudio.com
-                    </address>
-                </div>
+
                 <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
-                    To
-                    <address>
-                        <strong>John Doe</strong><br>
-                        795 Folsom Ave, Suite 600<br>
-                        San Francisco, CA 94107<br>
-                        Phone: (555) 539-1037<br>
-                        Email: john.doe@example.com
-                    </address>
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-4 invoice-col">
-                    <b>Invoice #007612</b><br>
-                    <br>
                     <b>Order ID: </b> <?= $no_order ?><br>
-                    <b>Payment Due:</b> 2/22/2014<br>
-                    <b>Account:</b> 968-34567
+                    <br>
                 </div>
                 <!-- /.col -->
             </div>
@@ -83,9 +60,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
+                            <?php
                             $i = 1;
-                            $cetak = $this->db->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array(); 
+                            $cetak = $this->db->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array();
                             ?>
 
                             <?php foreach ($cetak as $items) :
@@ -93,7 +70,7 @@
                                 <tr>
                                     <td><?php echo $items['jumlah']; ?></td>
                                     <td><?php echo $items['nama']; ?></td>
-                                    <input type="number" class="d-none form-control" name="id<?=$i;?>" value="<?= $items['id'];?>">
+                                    <input type="number" class="d-none form-control" name="id<?= $i; ?>" value="<?= $items['id']; ?>">
                                     <td>Rp. <?php echo number_format($items['harga']); ?></td>
                                     <td>Rp. <?php echo number_format($items['harga']); ?></td>
                                 </tr>
@@ -143,10 +120,10 @@
                         <table class="table">
                             <tr>
                                 <th style="width:70%">Total Bayar:</th>
-                                <td>Rp. <?php 
-                                $total = $this->db->select_sum('harga')->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array(); 
-                                $harga = $total[0]['harga'];
-                                echo number_format($harga); ?></td>
+                                <td>Rp. <?php
+                                        $total = $this->db->select_sum('harga')->get_where('tb_filepesanan', ['status' => 0, 'id_user' => $this->session->userdata('id_user')])->result_array();
+                                        $harga = $total[0]['harga'];
+                                        echo number_format($harga); ?></td>
                             </tr>
                         </table>
                     </div>
