@@ -17,6 +17,25 @@ class M_pesanan_masuk extends CI_Model
         $this->db->order_by('id_transaksi', 'desc');
         return $this->db->get()->result_array();
     }
+    public function pesanan_diproses_bulanan($bulan)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_transaksi');
+        $this->db->where('status_order=1');
+        $this->db->where($bulan);
+        $this->db->order_by('id_transaksi', 'desc');
+        return $this->db->get()->result_array();
+    }
+    public function pesanan_diproses_harian($hari1, $hari2)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_transaksi');
+        $this->db->where('status_order=1');
+        $this->db->where($hari1);
+        $this->db->where($hari2);
+        $this->db->order_by('id_transaksi', 'desc');
+        return $this->db->get()->result_array();
+    }
     public function total_pesanan_masuk()
     {
         $this->db->select('*');
