@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Sep 2022 pada 14.42
+-- Waktu pembuatan: 04 Des 2022 pada 11.33
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.2
 
@@ -46,10 +46,10 @@ CREATE TABLE `tb_barang` (
 --
 
 INSERT INTO `tb_barang` (`id_barang`, `nama_kategori`, `nama_barang`, `id_kategori`, `merk`, `gambar_barang`, `harga_barang`, `deskripsi`, `satuan`, `stok`) VALUES
-(43, 'ATK', 'Pulpen', 0, 'BIG', 'pulpen.jpg', '3000', '', 'pcs', '99'),
-(44, 'ATK', 'Penggaris', 12, 'Butrefly', 'penggaris.jpg', '3000', '', 'pcs', '30'),
+(43, 'ATK', 'Pulpen', 0, 'Snowman', 'pulpen.jpg', '3000', '', 'pcs', '99'),
+(44, 'ATK', 'Penggaris', 12, 'Buttrefly', 'penggaris.jpg', '3000', '', 'pcs', '30'),
 (45, 'ATK', 'Pensil', 0, 'Castel', 'thumb_450_450_cover_contain_w700_h700_117102pr_jpg.png', '2500', '', 'pcs', '828'),
-(74, 'ATK', 'Jangka', 0, 'Joyko', 'apa-itu-jangka-berikut-pengertiannya-dalam-matematika.jpg', '12000', '', 'pcs', '12'),
+(74, 'ATK', 'Jangka', 0, 'Joyko', 'apa-itu-jangka-berikut-pengertiannya-dalam-matematika.jpg', '7000', '', 'pcs', '12'),
 (75, 'ATK', 'Gunting', 0, 'joyko', '49b2b22e6a49b81464cff3e587e7739e.jpg', '12000', '', 'pcs', '45');
 
 -- --------------------------------------------------------
@@ -101,43 +101,14 @@ CREATE TABLE `tb_filepesanan` (
 --
 
 INSERT INTO `tb_filepesanan` (`id`, `nama_pelanggan`, `nama`, `jumlah`, `ukuran`, `harga`, `tanggal`, `id_user`, `status`) VALUES
-(32, '', 'wave_(1).png', 6, '3x4', 4998, '2022-09-06 19:20:27', 27, 1),
-(34, '', 'Profile1.pdf', 3, 'A4', 1500, '2022-09-07 09:19:13', 27, 1),
-(41, '', 'PngItem_431211.png', 2, '3R ', 5000, '2022-09-09 13:57:38', 27, 1),
 (47, '', '31.jpeg', 4, '4x6', 5000, '2022-09-13 21:48:10', 27, 1),
-(48, '', '2576100.jpg', 2, '3R ', 5000, '2022-09-13 21:49:09', 27, 1),
-(49, '', '', 2, 'A4', 1000, '2022-09-14 21:38:43', 27, 1),
 (54, '', '551fff636303fb8a696c213736ddc09e.jpg', 2, 'Full Kertas Foto A4', 20000, '2022-09-15 17:21:07', 27, 1),
 (55, 'Yudha', '1616bc4c2440c2bddc605bfe02da0f9aaf4bab7a.jpg', 3, 'Full Kertas Foto A4', 30000, '2022-09-15 17:25:07', 27, 1),
-(56, '', '', 4, '4x6', 5000, '2022-09-15 18:27:33', 27, 1),
-(57, '', '', 10, '3x4', 8333, '2022-09-15 18:28:42', 27, 1),
-(58, '', '', 12, '3x4', 10000, '2022-09-15 18:28:50', 27, 1),
-(59, '', '', 0, 'Pilih Ukuran', 0, '2022-09-15 21:27:47', 0, 0),
-(60, '', '', 0, 'Pilih Ukuran', 0, '2022-09-15 21:27:48', 0, 0),
-(62, '', '', 0, 'Pilih Ukuran', 0, '2022-09-17 17:34:24', 0, 0);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tb_karyawan`
---
-
-CREATE TABLE `tb_karyawan` (
-  `id_karyawan` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `nama_karyawan` varchar(255) NOT NULL,
-  `alamat` text NOT NULL,
-  `phone` bigint(13) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `tb_karyawan`
---
-
-INSERT INTO `tb_karyawan` (`id_karyawan`, `username`, `password`, `nama_karyawan`, `alamat`, `phone`) VALUES
-(15, 'Karyawan 1', '$2y$10$xP8VZ0CAAzkZEq0L4a/2JODRHBQ0JXAOgwet6BlvW9UN0nbHrBAkq', 'Kurnia', 'Jember', 81946587351),
-(17, 'Karyawan 2', '$2y$10$vPmnOjXcY6d7dvejjlJyV.RQbCAssLL3.ZOd/VL1VOpXLThTEuloi', 'Sdhat', 'Patrang', 6281946646654);
+(66, 'Eka', '58415.jpg', 4, 'Full Kertas Foto A4', 40000, '2022-10-09 23:02:05', 44, 1),
+(71, 'Eka', '15782e2ed006960a8dbc66a948c767d7c715f816.jpg', 5, 'A4 ', 50000, '2022-10-10 00:18:43', 44, 1),
+(72, 'Yudha', '33.jpeg', 6, '3x4', 5000, '2022-10-20 09:34:15', 47, 1),
+(74, '', '', 4, '4x6', 5000, '2022-11-12 18:24:46', 0, 0),
+(78, 'Yudha', 'BKPM-BJI-2018_-_Bilingual.pdf', 2, 'A4', 1000, '2022-11-25 07:02:17', 47, 1);
 
 -- --------------------------------------------------------
 
@@ -155,50 +126,7 @@ CREATE TABLE `tb_kategori` (
 --
 
 INSERT INTO `tb_kategori` (`id_kategori`, `nama_kategori`) VALUES
-(8, 'Print'),
-(10, 'Banner'),
-(12, 'ATK'),
-(13, 'Fotocopy'),
-(14, 'Jilid Softcover'),
-(15, 'Cetak Foto'),
-(16, 'Jilid Hardcover'),
-(17, 'Jilid Spiral');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tb_pelanggan`
---
-
-CREATE TABLE `tb_pelanggan` (
-  `id_pelanggan` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `is_actived` int(1) NOT NULL,
-  `date_created` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tb_penjualan`
---
-
-CREATE TABLE `tb_penjualan` (
-  `id_penjualan` int(11) NOT NULL,
-  `tanggal_jual` date NOT NULL,
-  `sub_total` int(255) NOT NULL,
-  `id_user` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tb_penjualan`
---
-
-INSERT INTO `tb_penjualan` (`id_penjualan`, `tanggal_jual`, `sub_total`, `id_user`) VALUES
-(4, '2021-07-17', 1313, 1);
+(12, 'ATK');
 
 -- --------------------------------------------------------
 
@@ -232,8 +160,8 @@ CREATE TABLE `tb_rekening` (
 --
 
 INSERT INTO `tb_rekening` (`id_rekening`, `nama_bank`, `no_rek`, `atas_nama`) VALUES
-(1, 'BRI', '9835-0333-3435-3523', 'Alvin'),
-(2, 'BNI', '343-2141-893-2222', 'Alvin');
+(1, 'BRI', '9835-0333-3435-3523', 'Fotocopy SEP'),
+(2, 'BNI', '343-2141-893-2222', 'Fotocopy SEP');
 
 -- --------------------------------------------------------
 
@@ -253,9 +181,23 @@ CREATE TABLE `tb_rinci_transaksi` (
 --
 
 INSERT INTO `tb_rinci_transaksi` (`id_rinci`, `no_order`, `id_barang`, `qty`) VALUES
-(267, '20220915L6EJDI2P', 44, 2),
-(268, '20220915ID1JWZNX', 44, 3),
-(269, '20220915TMAKXYVJ', 44, 4);
+(274, '20220927LUCDA321', 43, 1),
+(275, '20220927LUCDA321', 45, 2),
+(276, '20221008V9LXQWJO', 45, 1),
+(277, '20221015LUDTDZLF', 43, 1),
+(278, '20221015LUDTDZLF', 44, 2),
+(279, '20221015LUDTDZLF', 45, 1),
+(280, '20221020YPFCEMUK', 44, 6),
+(281, '20221102WZSBYPKA', 43, 1),
+(282, '20221102WZSBYPKA', 44, 1),
+(283, '20221125FEBCGAXI', 43, 1),
+(284, '20221125FEBCGAXI', 44, NULL),
+(285, '20221125MZQT8RXM', 43, 1),
+(286, '20221125MZQT8RXM', 44, NULL),
+(287, '202211257TOGQ6S0', 43, 2),
+(288, '202211257TOGQ6S0', 44, NULL),
+(289, '20221125ACBST8D7', 44, 1),
+(290, '20221125ACBST8D7', 45, 1);
 
 -- --------------------------------------------------------
 
@@ -300,30 +242,29 @@ CREATE TABLE `tb_transaksi` (
   `status_order` int(11) NOT NULL,
   `atas_nama` varchar(255) NOT NULL,
   `nama_bank` varchar(255) NOT NULL,
-  `no_rek` varchar(255) NOT NULL,
-  `no_resi` varchar(255) NOT NULL
+  `no_rek` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_transaksi`
 --
 
-INSERT INTO `tb_transaksi` (`id_transaksi`, `id_user`, `no_order`, `tanggal`, `nama_penerima`, `telp_penerima`, `alamat`, `total_bayar`, `bukti_bayar`, `status_bayar`, `status_order`, `atas_nama`, `nama_bank`, `no_rek`, `no_resi`) VALUES
-(52, 25, '20220805GA3PCXUH', '2022-08-05', 'Fani', '0853653', 'Jalan suryan III', 114343, 'assassins_creed_altair_ezio_connor_edward-HD.jpg', 1, 0, 'fani', 'BRI', '1234-452-74778', ''),
-(53, 27, '202208074ISGUOTV', '2022-08-07', 'Yudha', '08563642223', 'Jalan Sudirman no4', 126343, 'Untitled.png', 1, 0, 'Andi', 'BNI', '029301', ''),
-(80, 27, '202208076ETIH0PK', '2022-08-07', 'Yudha', '08563642223', 'Jalan Sudirman no4', 306343, 'dddsdf.JPG', 1, 1, 'Samosir', 'BRI', '56364-656363-4747', ''),
-(81, 27, '202208086J9EIJD8', '2022-08-08', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 39343, '481545_Anime_15.jpg', 1, 1, 'Yudha', 'Bank Jatim', '093-4752-25245', ''),
-(85, 28, '20220808MCFJFHOR', '2022-08-08', 'Roger', '08534523', 'Jalan Jambu No 1', 63343, '510px-Skull_and_crossbones_svg.png', 1, 1, 'Roger', 'BNI', '2315-7477-76467', ''),
-(89, 27, '20220812BCV7HRYW', '2022-08-12', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 6000, 'wave_(3).png', 1, 0, 'tes', 'tes', '8475848756', ''),
-(90, 44, '20220822QZVO9SEJ', '2022-08-22', 'Eka', '083764233', 'kwokf', 3000, '', 0, 0, '', '', '', ''),
-(91, 27, '202209077AU90MRA', '2022-09-07', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 3000, '', 1, 0, '', '', '', ''),
-(96, 27, '20220907GQD7UICS', '2022-09-07', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 6498, '', 2, 0, '', '', '', ''),
-(124, 27, '20220909PSY4TPQN', '2022-09-09', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 5000, '', 2, 0, '', '', '', ''),
-(127, 27, '20220913QEJVMGYD', '2022-09-13', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 10000, '2.jpeg', 1, 1, 'dad', 'weda', '421124', ''),
-(128, 27, '20220914RKCQUUGN', '2022-09-14', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 1000, '', 2, 0, '', '', '', ''),
-(129, 27, '20220915TZOPPCGB', '2022-09-15', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 3000, '', 2, 0, '', '', '', ''),
-(130, 27, '20220915L6EJDI2P', '2022-09-15', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 20000, '', 2, 0, '', '', '', ''),
-(131, 27, '20220915ID1JWZNX', '2022-09-15', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 30000, '', 2, 0, '', '', '', '');
+INSERT INTO `tb_transaksi` (`id_transaksi`, `id_user`, `no_order`, `tanggal`, `nama_penerima`, `telp_penerima`, `alamat`, `total_bayar`, `bukti_bayar`, `status_bayar`, `status_order`, `atas_nama`, `nama_bank`, `no_rek`) VALUES
+(52, 25, '20220805GA3PCXUH', '2022-08-05', 'Fani', '0853653', 'Jalan suryan III', 114343, 'assassins_creed_altair_ezio_connor_edward-HD.jpg', 1, 1, 'fani', 'BRI', '1234-452-74778'),
+(53, 27, '202208074ISGUOTV', '2022-08-07', 'Yudha', '08563642223', 'Jalan Sudirman no4', 126343, 'Untitled.png', 1, 1, 'Andi', 'BNI', '029301'),
+(81, 27, '202208086J9EIJD8', '2022-08-08', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 39343, '481545_Anime_15.jpg', 1, 1, 'Yudha', 'Bank Jatim', '093-4752-25245'),
+(89, 27, '20220812BCV7HRYW', '2022-08-12', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 6000, 'wave_(3).png', 1, 1, 'tes', 'tes', '8475848756'),
+(91, 27, '202209077AU90MRA', '2022-09-07', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 3000, '', 1, 1, '', '', ''),
+(124, 27, '20220909PSY4TPQN', '2022-09-09', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 5000, '', 2, 0, '', '', ''),
+(127, 27, '20220913QEJVMGYD', '2022-09-13', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 10000, '2.jpeg', 1, 1, 'dad', 'weda', '421124'),
+(128, 27, '20220914RKCQUUGN', '2022-09-14', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 1000, '', 2, 0, '', '', ''),
+(134, 27, '20220926CVIZHGBJ', '2022-09-26', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 15000, '2576100.jpg', 1, 1, 'alvin', 'BRI', '0980-0809-3812'),
+(140, 44, '20221009PKWB0U8L', '2022-10-09', 'Eka', '083764233', 'jalan jambu no 5', 10000, '', 2, 1, '', '', ''),
+(144, 44, '20221015LUDTDZLF', '2022-10-15', 'Eka', '083764233', 'jalan jambu no 5', 11500, '', 0, 0, '', '', ''),
+(145, 47, '20221020YPFCEMUK', '2022-10-20', 'Yudha', '08736445', 'jln jawa 10', 5000, '3.jpeg', 1, 1, 'yudha', 'BNI', '0207397904'),
+(146, 47, '20221102WZSBYPKA', '2022-11-02', 'Yudha', '08736445', 'jln jambu', 6000, '', 0, 0, '', '', ''),
+(150, 47, '202211257TOGQ6S0', '2022-11-25', 'Yudha', '087364456', 'Jalan Sudirman', 1000, '', 0, 0, '', '', ''),
+(151, 49, '20221125ACBST8D7', '2022-11-25', 'yudha eka', '085727521', 'jalan kalimantan', 5500, '', 0, 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -353,10 +294,12 @@ CREATE TABLE `tb_user` (
 INSERT INTO `tb_user` (`id_user`, `name`, `email`, `image`, `password`, `telepon`, `alamat`, `ttl`, `kelamin`, `role_id`, `is_actived`, `date_created`) VALUES
 (22, 'Alvin Yudha', 'vinska@gmail.com', '551fff636303fb8a696c213736ddc09e1.jpg', '$2y$10$S2YcFnl0AaprZpnpFj/jye0/AYPVRltL/WGf9aiVUxsgbQJJu.iKi', '085723764', '', '2000-11-17', 'Pria', 1, 1, 1653397234),
 (25, 'Fani', 'fani@gmail.com', '86327595_p0.jpg', '$2y$10$PCUHon1h81XmSneXx23rwOWjDfZcAtpMRYmnCwvRj1e0r/hBF7Fdm', '0853653', 'Jalan suryan III', '1999-07-25', 'wanita', 2, 1, 1658900953),
-(27, 'Yudha', 'yudha@gmail.com', 'adventure_time___finn-wallpaper-800x480.jpg', '$2y$10$lUY/dqCqr5PVTf2ez.w/J.MiM6BM6E9Zk7ZTdgmVNsQVvFtCyD8aC', '08563642223', 'Jalan Sudirman no 4', '2000-11-17', 'Wanita', 2, 1, 1659497892),
+(27, 'Yudha', 'yudha@gmail.com', 'adventure_time___finn-wallpaper-800x480.jpg', '$2y$10$lUY/dqCqr5PVTf2ez.w/J.MiM6BM6E9Zk7ZTdgmVNsQVvFtCyD8aC', '08563642223', 'Jalan Sudirman no 4', '2000-11-17', 'Pria', 2, 1, 1659497892),
 (28, 'Roger', 'roger@gmail.com', 'giga.jpg', '$2y$10$66w40ooFb90rzIsF2AzhzOiWEFjphJ95rLKjKOYaDwedqVMUKdTD6', '08534523', 'Jalan Jambu No 1\r\n', '1999-12-14', 'Pria', 2, 1, 1659873804),
 (40, 'roy', 'Chilijueyun@gmail.com', 'default.jpg', '$2y$10$NoW8MfA/oP6nDOOK8dcK8eWF4bBqVlpZZUYlRpwzSCcOXPtR3UsiC', '', '', '0000-00-00', '', 2, 0, 1660068429),
-(44, 'Eka', 'pradistya171100@gmail.com', 'default.jpg', '$2y$10$NfCQzYF/3vLzPRZFXtVcs.bInhP/HTooVGMgPl8ZCQp2CFMl/T81K', '083764233', '', '2000-11-12', 'Wanita', 2, 1, 1660139643);
+(45, 'Jovins', 'omen@gmail.com', 'default.jpg', '$2y$10$0N/KtWJs0KkN9JeiSzLbVuMWjs46t4dFscYbsavvg.KkdGwxYS3a.', '', '', '0000-00-00', '', 2, 0, 1664479715),
+(48, 'pramudhita shinta', 'pramuditha@polije.ac.id', 'default.jpg', '$2y$10$0EPWwvZr91MZnT6gGYtzeewDRutgQnJ5l75xXKzDoG205uDEgipGS', '', '', '0000-00-00', '', 2, 1, 1669342601),
+(49, 'yudha eka', 'pradistya171100@gmail.com', 'default.jpg', '$2y$10$LYmrHkPfzYTLrwzidzKQQe6Vr0iFn64D2xsFqKpuwOlNQNA/YKMxC', '085727521', 'jalan kalimantan', '0000-00-00', '', 2, 1, 1669342811);
 
 -- --------------------------------------------------------
 
@@ -406,9 +349,9 @@ CREATE TABLE `tb_user_menu` (
 --
 
 INSERT INTO `tb_user_menu` (`id`, `menu`) VALUES
+(0, 'Menu'),
 (1, 'Admin'),
 (2, 'Profile'),
-(3, 'Menu'),
 (4, 'Data'),
 (5, 'Pesanan'),
 (6, 'Transaksi'),
@@ -454,16 +397,15 @@ CREATE TABLE `tb_user_submenu` (
 INSERT INTO `tb_user_submenu` (`id`, `menu_id`, `tittle`, `url`, `icon`, `is_active`) VALUES
 (1, 2, 'My Profile', 'profile', 'fas fa-fw fa-user', 1),
 (3, 2, 'Edit Profile', 'profile/edit', 'fas fa-fw fa-user-edit', 1),
-(4, 3, 'Menu Management', 'menu', 'fas fa-fw fa-bars', 1),
-(5, 3, 'Submenu Management', 'menu/submenu', 'fas fa-fw fa-folder-open', 1),
-(14, 1, 'Role', 'admin/role', 'fas fa-fw fa-user-cog', 1),
+(4, 3, 'Menu Management', 'menu', 'fas fa-fw fa-bars', 0),
+(5, 3, 'Submenu Management', 'menu/submenu', 'fas fa-fw fa-folder-open', 0),
+(14, 1, 'Role', 'admin/role', 'fas fa-fw fa-user-cog', 0),
 (16, 4, 'Data Management', 'data', 'fas fa-fw fa-database', 1),
 (17, 2, 'Change Password', 'profile/changepassword', 'fas fa-fw fa-key', 1),
 (18, 6, 'Transaksi', 'transaksi', 'fas fa-fw fa-file', 1),
 (19, 1, 'Dashboard', 'admin', 'fas fa-fw fa-tachometer-alt', 1),
-(21, 9, 'Submenu', 'menu/submenu', 'fas fa-fw fa-file-minus', 1),
 (22, 5, 'Pesanan Masuk', 'pesananmasuk', 'fas fa-fw fa-inbox', 1),
-(23, 7, 'Laporan Penjualan', 'laporanpenjualan', 'fas fa-fw fa-file-minus', 1);
+(23, 7, 'Laporan Penjualan', 'laporan', 'fas fa-fw fa-archive', 1);
 
 -- --------------------------------------------------------
 
@@ -483,7 +425,7 @@ CREATE TABLE `tb_user_token` (
 --
 
 INSERT INTO `tb_user_token` (`id`, `email`, `token`, `date_created`) VALUES
-(1, 'pradistya171100@gmail.com', 'DtXfMYmuW8ZQxXg57m9EfgYHu2wpvWspZwDGf/u9How=', 1660494990);
+(1, 'pramuditha@polije.ac.id', 'Bl6WFRSBy9zxij/E/a1DvmfX8uu7xPV1upHHJUBkUZU=', 1669342601);
 
 --
 -- Indexes for dumped tables
@@ -512,18 +454,6 @@ ALTER TABLE `tb_filepesanan`
 --
 ALTER TABLE `tb_kategori`
   ADD PRIMARY KEY (`id_kategori`);
-
---
--- Indeks untuk tabel `tb_pelanggan`
---
-ALTER TABLE `tb_pelanggan`
-  ADD PRIMARY KEY (`id_pelanggan`);
-
---
--- Indeks untuk tabel `tb_penjualan`
---
-ALTER TABLE `tb_penjualan`
-  ADD PRIMARY KEY (`id_penjualan`);
 
 --
 -- Indeks untuk tabel `tb_print`
@@ -590,10 +520,16 @@ ALTER TABLE `tb_user_token`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `tb_barang`
+--
+ALTER TABLE `tb_barang`
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+
+--
 -- AUTO_INCREMENT untuk tabel `tb_filepesanan`
 --
 ALTER TABLE `tb_filepesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_print`
@@ -605,19 +541,19 @@ ALTER TABLE `tb_print`
 -- AUTO_INCREMENT untuk tabel `tb_rinci_transaksi`
 --
 ALTER TABLE `tb_rinci_transaksi`
-  MODIFY `id_rinci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=270;
+  MODIFY `id_rinci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=291;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_user_accessmenu`
@@ -642,6 +578,12 @@ ALTER TABLE `tb_user_role`
 --
 ALTER TABLE `tb_user_submenu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_user_token`
+--
+ALTER TABLE `tb_user_token`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
