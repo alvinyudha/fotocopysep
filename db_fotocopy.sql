@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2022 at 04:42 PM
+-- Generation Time: Dec 08, 2022 at 01:30 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -241,29 +241,30 @@ CREATE TABLE `tb_transaksi` (
   `status_order` int(11) NOT NULL,
   `atas_nama` varchar(255) NOT NULL,
   `nama_bank` varchar(255) NOT NULL,
-  `no_rek` varchar(255) NOT NULL
+  `no_rek` varchar(255) NOT NULL,
+  `no_resi` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_transaksi`
 --
 
-INSERT INTO `tb_transaksi` (`id_transaksi`, `id_user`, `no_order`, `tanggal`, `nama_penerima`, `telp_penerima`, `alamat`, `total_bayar`, `bukti_bayar`, `status_bayar`, `status_order`, `atas_nama`, `nama_bank`, `no_rek`) VALUES
-(52, 25, '20220805GA3PCXUH', '2022-08-05', 'Fani', '0853653', 'Jalan suryan III', 114343, 'assassins_creed_altair_ezio_connor_edward-HD.jpg', 1, 1, 'fani', 'BRI', '1234-452-74778'),
-(53, 27, '202208074ISGUOTV', '2022-08-07', 'Yudha', '08563642223', 'Jalan Sudirman no4', 126343, 'Untitled.png', 1, 1, 'Andi', 'BNI', '029301'),
-(81, 27, '202208086J9EIJD8', '2022-08-08', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 39343, '481545_Anime_15.jpg', 1, 1, 'Yudha', 'Bank Jatim', '093-4752-25245'),
-(89, 27, '20220812BCV7HRYW', '2022-08-12', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 6000, 'wave_(3).png', 1, 1, 'tes', 'tes', '8475848756'),
-(91, 27, '202209077AU90MRA', '2022-09-07', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 3000, '', 1, 1, '', '', ''),
-(124, 27, '20220909PSY4TPQN', '2022-09-09', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 5000, '', 2, 0, '', '', ''),
-(127, 27, '20220913QEJVMGYD', '2022-09-13', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 10000, '2.jpeg', 1, 1, 'dad', 'weda', '421124'),
-(128, 27, '20220914RKCQUUGN', '2022-09-14', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 1000, '', 2, 1, '', '', ''),
-(134, 27, '20220926CVIZHGBJ', '2022-09-26', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 15000, '2576100.jpg', 1, 1, 'alvin', 'BRI', '0980-0809-3812'),
-(140, 44, '20221009PKWB0U8L', '2022-10-09', 'Eka', '083764233', 'jalan jambu no 5', 10000, '', 2, 1, '', '', ''),
-(144, 44, '20221015LUDTDZLF', '2022-10-15', 'Eka', '083764233', 'jalan jambu no 5', 11500, '', 0, 0, '', '', ''),
-(145, 47, '20221020YPFCEMUK', '2022-10-20', 'Yudha', '08736445', 'jln jawa 10', 5000, '3.jpeg', 1, 1, 'yudha', 'BNI', '0207397904'),
-(146, 47, '20221102WZSBYPKA', '2022-11-02', 'Yudha', '08736445', 'jln jambu', 6000, '', 0, 0, '', '', ''),
-(150, 47, '202211257TOGQ6S0', '2022-11-25', 'Yudha', '087364456', 'Jalan Sudirman', 1000, '', 0, 0, '', '', ''),
-(151, 49, '20221125ACBST8D7', '2022-11-25', 'yudha eka', '085727521', 'jalan kalimantan', 5500, '', 0, 0, '', '', '');
+INSERT INTO `tb_transaksi` (`id_transaksi`, `id_user`, `no_order`, `tanggal`, `nama_penerima`, `telp_penerima`, `alamat`, `total_bayar`, `bukti_bayar`, `status_bayar`, `status_order`, `atas_nama`, `nama_bank`, `no_rek`, `no_resi`) VALUES
+(52, 25, '20220805GA3PCXUH', '2022-08-05', 'Fani', '0853653', 'Jalan suryan III', 114343, 'assassins_creed_altair_ezio_connor_edward-HD.jpg', 1, 1, 'fani', 'BRI', '1234-452-74778', NULL),
+(53, 27, '202208074ISGUOTV', '2022-08-07', 'Yudha', '08563642223', 'Jalan Sudirman no4', 126343, 'Untitled.png', 1, 1, 'Andi', 'BNI', '029301', NULL),
+(81, 27, '202208086J9EIJD8', '2022-08-08', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 39343, '481545_Anime_15.jpg', 1, 1, 'Yudha', 'Bank Jatim', '093-4752-25245', NULL),
+(89, 27, '20220812BCV7HRYW', '2022-08-12', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 6000, 'wave_(3).png', 1, 1, 'tes', 'tes', '8475848756', NULL),
+(91, 27, '202209077AU90MRA', '2022-09-07', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 3000, '', 1, 1, '', '', '', NULL),
+(124, 27, '20220909PSY4TPQN', '2022-09-09', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 5000, '', 2, 1, '', '', '', 'NHGAS675423'),
+(127, 27, '20220913QEJVMGYD', '2022-09-13', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 10000, '2.jpeg', 1, 1, 'dad', 'weda', '421124', NULL),
+(128, 27, '20220914RKCQUUGN', '2022-09-14', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 1000, '', 2, 1, '', '', '', NULL),
+(134, 27, '20220926CVIZHGBJ', '2022-09-26', 'Yudha', '08563642223', 'Jalan Sudirman no 4', 15000, '2576100.jpg', 1, 1, 'alvin', 'BRI', '0980-0809-3812', NULL),
+(140, 44, '20221009PKWB0U8L', '2022-10-09', 'Eka', '083764233', 'jalan jambu no 5', 10000, '', 2, 1, '', '', '', NULL),
+(144, 44, '20221015LUDTDZLF', '2022-10-15', 'Eka', '083764233', 'jalan jambu no 5', 11500, '', 0, 0, '', '', '', NULL),
+(145, 47, '20221020YPFCEMUK', '2022-10-20', 'Yudha', '08736445', 'jln jawa 10', 5000, '3.jpeg', 1, 1, 'yudha', 'BNI', '0207397904', NULL),
+(146, 47, '20221102WZSBYPKA', '2022-11-02', 'Yudha', '08736445', 'jln jambu', 6000, '', 0, 0, '', '', '', NULL),
+(150, 47, '202211257TOGQ6S0', '2022-11-25', 'Yudha', '087364456', 'Jalan Sudirman', 1000, '', 0, 0, '', '', '', NULL),
+(151, 49, '20221125ACBST8D7', '2022-11-25', 'yudha eka', '085727521', 'jalan kalimantan', 5500, '', 0, 0, '', '', '', NULL);
 
 -- --------------------------------------------------------
 

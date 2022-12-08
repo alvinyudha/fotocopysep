@@ -57,7 +57,7 @@
                                             <td>
                                                 <?php if ($p['status_bayar'] == 1 || $p['status_bayar'] == 2) { ?>
                                                     <a href="" class="<?= ($p['status_bayar'] == 1) ? "" : "d-none" ?> btn btn-sm btn btn-success" data-toggle="modal" data-target="#cek<?= $p['id_transaksi'] ?>">Cek Bukti Bayar</a>
-                                                    <a href="<?= base_url('pesananmasuk/proses/' . $p['id_transaksi']) ?>" class="btn btn-sm btn-primary">Proses</a>
+                                                    <a data-toggle="modal" data-target="#cek<?= $p['id_transaksi'] ?>" class="btn btn-sm btn-primary">Proses</a>
                                                 <?php } ?>
                                             </td>
                                         </tr>
@@ -74,7 +74,7 @@
                                         <th>Tanggal</th>
                                         <th>Telepon</th>
                                         <th>Total Bayar</th>
-                                        <th>Action</th>
+                                        <th>No. Resi</th>
                                     </tr>
                                     <?php foreach ($pesanan_diproses as $p) : ?>
                                         <tr>
@@ -85,11 +85,7 @@
                                             <td><b>Rp. <?= number_format($p['total_bayar']) ?></b><br>
                                                 <span class="badge badge-primary">Diproses</span>
                                             </td>
-                                            <!-- <td>
-                                                <?php if ($p['status_bayar'] == 1) { ?>
-                                                    <a href="" data-toggle="modal" data-target="#kirim<?= $p['id_transaksi'] ?>" class="btn btn-sm btn-primary"><i class="fa fa-send"></i> Kirim</a>
-                                                <?php } ?>
-                                            </td> -->
+                                            <td><?= $p['no_resi']; ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </table>
@@ -119,64 +115,18 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <form action="<?= base_url('pesananmasuk/proses/' . $p['id_transaksi']) ?>" method="POST">
                 <div class="modal-body">
                     <table class="table">
                         <tr>
-                            <th>Nama Bank</th>
+                            <th>No. Resi</th>
                             <th>:</th>
-                            <td><?= $p['nama_bank'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>No Rekening</th>
-                            <th>:</th>
-                            <td><?= $p['no_rek'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Atas Nama</th>
-                            <th>:</th>
-                            <td><?= $p['atas_nama'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Total Bayar</th>
-                            <th>:</th>
-                            <td>Rp. <?= number_format($p['total_bayar']); ?></td>
+                            <td><input type="text" class="form-control" name="no_resi"></td>
                         </tr>
                     </table>
-                    <img src="<?= base_url('assets/img/buktibayar/') . $p['bukti_bayar']; ?>" class="img-fluid pad">
+                    <button type="submit" class="btn btn-sm btn-success">Proses Pengiriman</button>
                 </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-<?php endforeach ?>
-
-
-<!-- Modal Kirim -->
-<?php foreach ($pesanan_diproses as $p) : ?>
-    <div class="modal fade" id="kirim<?= $p['id_transaksi'] ?>">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title"><strong><?= $p['no_order'] ?></strong></h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <?= form_open_multipart() ?>
-                    <table>
-                        <tr>
-                            <th></th>
-                        </tr>
-                    </table>
-
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button class="btn btn-danger" data-dismiss="modal" type="button">Tutup</button>
-                    <button class="btn btn-success" type="submit">Simpan</button>
-                </div>
-                <?= form_close() ?>
+                </form>
             </div>
             <!-- /.modal-content -->
         </div>
