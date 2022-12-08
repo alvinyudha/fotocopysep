@@ -28,9 +28,11 @@ class pesananmasuk extends CI_Controller
     public function proses($id_transaksi)
     {
 
+        $no_resi = $this->input->post('no_resi');
         $data = array(
             'id_transaksi' => $id_transaksi,
-            'status_order' => '1'
+            'status_order' => '1',
+            'no_resi' => $no_resi
         );
         $this->db->where('id_transaksi', $id_transaksi);
         $this->db->update('tb_transaksi', $data);
