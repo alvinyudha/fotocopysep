@@ -96,6 +96,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <?php echo form_close(); ?>
                     </div>
                 <?php endforeach ?>

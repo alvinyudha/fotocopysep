@@ -42,19 +42,16 @@ class kategori extends CI_Controller
         redirect('kategori');
     }
 
-    public function edit($id_kategori)
+    public function edit()
     {
-        $this->form_validation->set_rules('nama_kategori', 'Nama Kategori', 'required');
-        if ($this->form_validation->run() == false) { //jika gagal maka
-        } else { //jika berhasil maka
-            $nama_kategori = $this->input->post('nama_kategori');
-            $data = array(
-                'nama_kategori' => $nama_kategori
-            );
-            $this->db->where('id_kategori', $id_kategori);
-            $this->db->update('tb_kategori', $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Kategori telah diubah!<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
-            redirect('kategori');
-        }
+        $id_kategori = $this->input->post('id_kategori');
+        $nama_kategori = $this->input->post('nama_kategori');
+        $data = array(
+            'nama_kategori' => $nama_kategori
+        );
+        $this->db->where('id_kategori', $id_kategori);
+        $this->db->update('tb_kategori', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Kategori telah diubah!<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+        redirect('kategori');
     }
 }

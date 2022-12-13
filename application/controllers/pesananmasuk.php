@@ -39,4 +39,16 @@ class pesananmasuk extends CI_Controller
         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Pesanan berhasil diproses!<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
         redirect('pesananmasuk');
     }
+    public function edit()
+    {
+        $id_transaksi = $this->input->post('id_transaksi');
+        $total_bayar = $this->input->post('total_bayar');
+        $data = array(
+            'total_bayar' => $total_bayar
+        );
+        $this->db->where('id_transaksi', $id_transaksi);
+        $this->db->update('tb_transaksi', $data);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data telah diupdate!<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+        redirect('pesananmasuk');
+    }
 }

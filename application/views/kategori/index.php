@@ -25,7 +25,7 @@
                             <th scope="row"><?= $i; ?></th>
                             <td><?= $k['nama_kategori']; ?></td>
                             <td>
-                                <a href="" class="badge badge-success" id="tombolEdit" data-toggle="modal" data-target="#newEditModal<?= $k['id_kategori']; ?>"><i class="fa fa-edit"></i> edit</a>
+                                <a href="" class="badge badge-success" data-toggle="modal" data-target="#newEditModal<?= $k['id_kategori']; ?>"><i class="fa fa-edit"></i> edit</a>
                                 <a href="<?= base_url('kategori/hapus/') . $k['id_kategori']; ?>" class="badge badge-danger" onclick="return confirm('yakin ingin menghapus?');"><i class="fa fa-trash"></i> delete</a>
                             </td>
                         </tr>
@@ -88,7 +88,7 @@ foreach ($kategori as $k) : $no++ ?>
                 <div class="modal-body">
                     <input type="hidden" name='id_kategori' id='id_kategori'>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" value="<?= $k['nama_kategori']; ?>">
+                        <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" value="<?= $k['nama_kategori']; ?>" required>
                     </div>
                 </div>
                 <div class="modal-footer ">

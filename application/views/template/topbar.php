@@ -27,6 +27,27 @@
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
 
+
+            <?php
+            $keranjang = $this->db->select('*')->from('tb_transaksi')->where('status_bayar', 1)->where('status_order', 0)->or_where('status_bayar', 2)->where('status_order', 0)->get()->num_rows();
+            ?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge badge-danger navbar-badge"><?= $keranjang ?></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <?php if (empty($keranjang)) { ?>
+                            <a href="#" class="dropdown-item">
+                                <p>Belum ada pesanan</p>
+                            </a>
+                            <?php } else {
+                            ?>
+                                <a href="<?= base_url('pesananmasuk') ?>" class="dropdown-item dropdown-footer">Lihat Pesanan</a>
+                        <?php } ?>
+                    </div>
+                </li>
+
                 <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                 <li class="nav-item dropdown no-arrow d-sm-none">
                     <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
