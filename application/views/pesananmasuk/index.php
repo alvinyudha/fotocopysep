@@ -57,13 +57,14 @@
                                             <th>
                                                 <div class="toolbox">
                                                     <a href="" class="badge badge-success" data-toggle="modal" data-target="#editModal<?= $p['id_transaksi']; ?>"> <i class="fa fa-edit"></i>Edit</a>
+                                                    <?php if ($p['status_bayar'] == 1 || $p['status_bayar'] == 2) { ?>
+                                                        <a href="" class="<?= ($p['status_bayar'] == 1) ? "" : "d-none" ?> btn btn-sm btn btn-success" data-toggle="modal" data-target="#cek<?= $p['id_transaksi'] ?>">Cek Bukti Bayar</a>
+                                                        <a data-toggle="modal" data-target="#cek<?= $p['id_transaksi'] ?>" class="btn btn-sm btn-primary">Proses</a>
+                                                    <?php } ?>
                                                 </div>
                                             </th>
                                             <td>
-                                                <?php if ($p['status_bayar'] == 1 || $p['status_bayar'] == 2) { ?>
-                                                    <a href="" class="<?= ($p['status_bayar'] == 1) ? "" : "d-none" ?> btn btn-sm btn btn-success" data-toggle="modal" data-target="#cek<?= $p['id_transaksi'] ?>">Cek Bukti Bayar</a>
-                                                    <a data-toggle="modal" data-target="#proses<?= $p['id_transaksi'] ?>" class="btn btn-sm btn-primary">Proses</a>
-                                                <?php } ?>
+
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -111,7 +112,7 @@
 
 <!-- Modal Cek Bukti Pembayaran -->
 <?php foreach ($pesanan as $p) : ?>
-    <div class="modal fade" id="proses<?= $p['id_transaksi'] ?>">
+    <div class="modal fade" id="cek<?= $p['id_transaksi'] ?>">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -127,62 +128,6 @@
                                 <th>No. Resi</th>
                                 <th>:</th>
                                 <td><input type="text" class="form-control" name="no_resi"></td>
-                            </tr>
-                        </table>
-                        <button type="submit" class="btn btn-sm btn-success">Proses Pengiriman</button>
-                    </div>
-                </form>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-<?php endforeach ?>
-
-
-<!-- Modal Edit -->
-<?php $no = 0;
-foreach ($pesanan as $p) : $no++ ?>
-    <div class="modal fade" id="editModal<?= $p['id_transaksi']; ?>" tabindex="-1" role="dialog" aria-labelledby="#editModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">Edit Harga</h5>
-
-                    <!-- Modal Cek Bukti Pembayaran -->
-                    <?php foreach ($pesanan as $p) : ?>
-                        <div class="modal fade" id="cek<?= $p['id_transaksi'] ?>">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h3 class="modal-title"><strong><?= $p['no_order'] ?></strong></h3>
-
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-
-                                    <?php echo form_open_multipart('pesananmasuk/edit/' . $p['id_transaksi']) ?>
-                                    <div class="modal-body">
-                                        <input type="hidden" name="id_transaksi" value="<?= $p['id_transaksi'] ?>">
-
-                                        <div class="form-group">
-                                            <label for="total_bayar">Total Bayar</label>
-                                            <input type="number" class="form-control" id="total_bayar" name="total_bayar" value="<?= $p['total_bayar']; ?>" required>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" name="tutup" data-dismiss="modal">Tutup</button>
-                                        <button type="submit" class="btn btn-primary float-right">Simpan</button>
-                                    </div>
-                                    <?php echo form_close(); ?>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-
-                    <div class="modal-body">
-                        <table class="table">
                             <tr>
                                 <th>Nama Bank</th>
                                 <th>:</th>
@@ -203,12 +148,49 @@ foreach ($pesanan as $p) : $no++ ?>
                                 <th>:</th>
                                 <td>Rp. <?= number_format($p['total_bayar']); ?></td>
                             </tr>
+                            </tr>
                         </table>
                         <img src="<?= base_url('assets/img/buktibayar/') . $p['bukti_bayar']; ?>" class="img-fluid pad">
+                        <button type="submit" class="btn btn-sm btn-success">Proses Pengiriman</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+<?php endforeach ?>
+
+
+<!-- Modal Edit -->
+<?php $no = 0;
+foreach ($pesanan as $p) : $no++ ?>
+    <div class="modal fade" id="editModal<?= $p['id_transaksi']; ?>" tabindex="-1" role="dialog" aria-labelledby="#editModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit Harga</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <?php echo form_open_multipart('pesananmasuk/edit/' . $p['id_transaksi']) ?>
+                <div class="modal-body">
+                    <input type="hidden" name="id_transaksi" value="<?= $p['id_transaksi'] ?>">
+
+                    <div class="form-group">
+                        <label for="total_bayar">Total Bayar</label>
+                        <input type="number" class="form-control" id="total_bayar" name="total_bayar" value="<?= $p['total_bayar']; ?>" required>
                     </div>
                 </div>
-                <!-- /.modal-content -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" name="tutup" data-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary float-right">Simpan</button>
+                </div>
+                <?php echo form_close(); ?>
             </div>
-            <!-- /.modal-dialog -->
         </div>
-    <?php endforeach ?>
+    </div>
+<?php endforeach; ?>
