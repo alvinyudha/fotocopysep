@@ -139,7 +139,7 @@
     </div>
 <?php endforeach ?>
 
-<<<<<<< HEAD
+
 <!-- Modal Edit -->
 <?php $no = 0;
 foreach ($pesanan as $p) : $no++ ?>
@@ -148,69 +148,67 @@ foreach ($pesanan as $p) : $no++ ?>
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editModalLabel">Edit Harga</h5>
-=======
-<!-- Modal Cek Bukti Pembayaran -->
-<?php foreach ($pesanan as $p) : ?>
-    <div class="modal fade" id="cek<?= $p['id_transaksi'] ?>">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title"><strong><?= $p['no_order'] ?></strong></h3>
->>>>>>> 5fe5a9857f8e3aab1360c7db35d3e8530779f463
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-<<<<<<< HEAD
 
-                <?php echo form_open_multipart('pesananmasuk/edit/' . $p['id_transaksi']) ?>
-                <div class="modal-body">
-                    <input type="hidden" name="id_transaksi" value="<?= $p['id_transaksi'] ?>">
+                    <!-- Modal Cek Bukti Pembayaran -->
+                    <?php foreach ($pesanan as $p) : ?>
+                        <div class="modal fade" id="cek<?= $p['id_transaksi'] ?>">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title"><strong><?= $p['no_order'] ?></strong></h3>
 
-                    <div class="form-group">
-                        <label for="total_bayar">Total Bayar</label>
-                        <input type="number" class="form-control" id="total_bayar" name="total_bayar" value="<?= $p['total_bayar']; ?>" required>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                    <?php echo form_open_multipart('pesananmasuk/edit/' . $p['id_transaksi']) ?>
+                                    <div class="modal-body">
+                                        <input type="hidden" name="id_transaksi" value="<?= $p['id_transaksi'] ?>">
+
+                                        <div class="form-group">
+                                            <label for="total_bayar">Total Bayar</label>
+                                            <input type="number" class="form-control" id="total_bayar" name="total_bayar" value="<?= $p['total_bayar']; ?>" required>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" name="tutup" data-dismiss="modal">Tutup</button>
+                                        <button type="submit" class="btn btn-primary float-right">Simpan</button>
+                                    </div>
+                                    <?php echo form_close(); ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+
+                    <div class="modal-body">
+                        <table class="table">
+                            <tr>
+                                <th>Nama Bank</th>
+                                <th>:</th>
+                                <td><?= $p['nama_bank'] ?></td>
+                            </tr>
+                            <tr>
+                                <th>No Rekening</th>
+                                <th>:</th>
+                                <td><?= $p['no_rek'] ?></td>
+                            </tr>
+                            <tr>
+                                <th>Atas Nama</th>
+                                <th>:</th>
+                                <td><?= $p['atas_nama'] ?></td>
+                            </tr>
+                            <tr>
+                                <th>Total Bayar</th>
+                                <th>:</th>
+                                <td>Rp. <?= number_format($p['total_bayar']); ?></td>
+                            </tr>
+                        </table>
+                        <img src="<?= base_url('assets/img/buktibayar/') . $p['bukti_bayar']; ?>" class="img-fluid pad">
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" name="tutup" data-dismiss="modal">Tutup</button>
-                    <button type="submit" class="btn btn-primary float-right">Simpan</button>
-                </div>
-                <?php echo form_close(); ?>
+                <!-- /.modal-content -->
             </div>
+            <!-- /.modal-dialog -->
         </div>
-    </div>
-<?php endforeach; ?>
-=======
-                <div class="modal-body">
-                    <table class="table">
-                        <tr>
-                            <th>Nama Bank</th>
-                            <th>:</th>
-                            <td><?= $p['nama_bank'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>No Rekening</th>
-                            <th>:</th>
-                            <td><?= $p['no_rek'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Atas Nama</th>
-                            <th>:</th>
-                            <td><?= $p['atas_nama'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Total Bayar</th>
-                            <th>:</th>
-                            <td>Rp. <?= number_format($p['total_bayar']); ?></td>
-                        </tr>
-                    </table>
-                    <img src="<?= base_url('assets/img/buktibayar/') . $p['bukti_bayar']; ?>" class="img-fluid pad">
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-<?php endforeach ?>
->>>>>>> 5fe5a9857f8e3aab1360c7db35d3e8530779f463
+    <?php endforeach ?>
