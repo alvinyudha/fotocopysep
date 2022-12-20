@@ -65,19 +65,25 @@
             <div style="font-size: small; ">
                 <br>
                 <br>
-                admin
+                <div style="font-weight: bold;">
+                    admin
+                </div>
+                <div style="font-weight: bold;">
+                    email : vinska@gmail.com
+                </div>
+                <div style="font-weight: bold;">
+                    pass : admin123
+                </div>
                 <br>
-                email : vinska@gmail.com
-                <br>
-                pass : admin123
-
-                <br>
-                <br>
-                pelanggan
-                <br>
-                email : yudha@gmail.com
-                <br>
-                pass : 12345
+                <div style="font-weight: bold;">
+                    pelanggan
+                </div>
+                <div style="font-weight: bold;">
+                    email : yudha@gmail.com
+                </div>
+                <div style="font-weight: bold;">
+                    pass : 12345
+                </div>
             </div>
         </div>
     </div>
