@@ -62,7 +62,23 @@
             <div class="text-center1">
                 <a class="small" href="<?= base_url('auth/registration'); ?> ">Daftar Disini</a>
             </div>
+            <div style="font-size: small; ">
+                <br>
+                <br>
+                admin
+                <br>
+                email : vinska@gmail.com
+                <br>
+                pass : admin123
 
+                <br>
+                <br>
+                pelanggan
+                <br>
+                email : yudha@gmail.com
+                <br>
+                pass : 12345
+            </div>
         </div>
     </div>
     <script>
